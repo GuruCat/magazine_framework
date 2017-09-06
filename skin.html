@@ -1,0 +1,1058 @@
+<!-- FastBoot v1.6.2 by Readiz
+	 Responsive Tistory Skin
+	 http://readiz.com/
+	 Open sources are copyright of their respective owners.
+-->
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> -->
+<meta name="author" content="[##_blogger_##]">
+<meta name="description" content="[##_desc_##]">
+<meta name="generator" content="FastBoot">
+<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+<!-- Table of Contents stylesheet-->
+<!--<link href="./images/bootstrap.css" rel="stylesheet" />-->
+<link href="./images/jquery.tocify.css" rel="stylesheet" />
+<!--F Open Sources are using here: Bootstrap, Bootflat, Fontawesome -->
+<link href="./images/fastboot.css" rel="stylesheet" />
+<link rel="stylesheet" media="screen" type="text/css" href="./style.css" />
+
+<title>[##_page_title_##] :: [##_title_##]</title>
+<!--F IE Old Version Compatible -->
+<script>var ielt9 = 0;</script>
+<!--[if lt IE 9]><link href="./images/ie.fix.css?17" rel="stylesheet" /><script>ielt9 = 1</script><![endif]-->
+<!--[if IE 7]><link href="./images/ie7.css?0505" rel="stylesheet" /><div id="ie_topbar">[##_title_##] | <a href="/">Home</a> | <a href="/tag">Tag</a> | <a href="/guestbook">Guestbook</a> | <a href="/admin">Admin</a></div><![endif]-->
+<script>
+/* ----------------- FastBoot Setting Variables ---------------*/
+/* 
+---------- Category Setting 
+			0: Gallery (Default)
+			1: List
+			2: Simple Title
+-------------------------------
+*/
+var f_categoryDefaultMode = 1;
+/* 
+---------- T-Edition Enable
+			false: Use FastBoot Index (Default)
+			true: Use T-edition
+-------------------------------
+*/
+var f_enableTedition = false;
+</script>
+<script>
+/* FastBoot Index by Readiz */
+var urlAddr = decodeURIComponent(location.href);urlAddr = urlAddr.replace('http://','').replace('https://','');urlAddr = urlAddr.split('#')[0]; urlAddr = urlAddr.split('?')[0];
+var url = urlAddr.split('/');
+var rssLogFlag;
+if(!f_enableTedition && url[1] == '') {
+	document.title='[##_title_##]';
+	rssLogFlag=1;
+	document.write('<style>#leftContent{display:none}#coverDiv{float:left;width:75%;margin-top:-15px}@media screen and (max-width:991px){#coverDiv{width:100%;margin-top:0}}#coverDiv{min-height:100%;margin-bottom:50px;display:block}#coverDiv img{float:right;padding-left:10px;max-width:100%}#coverDiv .info p{margin-bottom:50px}#coverDiv .col-md-12,#coverDiv .col-md-2,#coverDiv .col-md-3,#coverDiv .col-md-4,#coverDiv .col-md-6{padding:10px}#coverDiv .col-md-2 img,#coverDiv .col-md-3 img,#coverDiv .col-md-4 img{float:none;display:block;margin:auto;padding:0}#coverDiv .col-md-3 img,#coverDiv .col-md-2 img{display:none}#coverDiv .col-md-12 img{max-height:200px;max-width:400px}#coverDiv .col-md-6 img{max-height:150px;max-width:200px}#coverDiv p.des{font-size:14px}#coverDiv .col-md-12 img{float:left;padding-left:0;padding-right:10px}#coverDiv div.thumbImages{margin:30px 10px;height:185px;overflow:hidden;text-align:center}#coverDiv div.thumbImages img{padding:0;margin:5px;float:none}#coverDiv h5{margin-bottom:5px}#coverDiv .pubDate{float:right;font-weight:700}#coverDiv .loading{height:1080px}#coverDiv img{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";filter:alpha(opacity=80);-moz-opacity:.8;opacity:.8}#coverDiv img:hover{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:alpha(opacity=100);-moz-opacity:1;opacity:1}#outer_btn_left,#outer_btn_right{display:none!important}@media screen and (max-width:767px){#coverDiv .col-md-4 p.des,#coverDiv .col-md-3 p.des,#coverDiv .col-md-2 p.des{display:none}#coverDiv .col-md-3 img,#coverDiv .col-md-2 img{display:block}#coverDiv .col-md-12 img,#coverDiv .col-md-6 img{float:none;padding:10px;max-width:200px;height:auto;max-height:150px;display:block;margin-left:auto;margin-right:auto;text-align:center}#coverDiv .pubDate{float:none;font-weight:700;text-align:right}}.contentPadding{background-color:#fff;padding:10px;margin:5px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.2);-moz-box-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:0 1px 2px rgba(0,0,0,.2)}</style>') 
+}
+</script>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- highlight.js의 core파일 불러오기, https://highlightjs.org/ -->
+<script src="./images/highlight.pack.js"></script>
+<!-- highlight.js의 theme -->
+<link rel="stylesheet" href="./images/monokai-sublime.css">
+<!-- highlight.js의 초기화 함수 호출 -->
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+</head><body id="[##_body_id_##]">
+<!--F 빅 사이즈 좌우 버튼 (1400px 이상 좌우 배치) -->
+<div id="outer_btn_left" class="hidden"></div>
+<div id="outer_btn_right" class="hidden"></div>
+<!--F 데스크탑용 네비게이션 바 시작 -->
+<div id="desktopNav" class="hidden-xs">
+	<div class="container">
+		<p class="graylink pull-right"><a href="/admin" title="Admin"><i class="fa fa-cogs"></i> Manage</a><span id="loginout_append"><a href="https://www.tistory.com/login"><i class="fa fa-lock fa-fw"></i> Login</a></span></p>
+		<div class="navMiddle">
+			<form class="pull-right" role="search">
+				<div class="form-search search-only">
+					<i class="fa fa-search-plus search-icon"></i>
+					<input type="text" name="search2" value="" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + looseURIEncode(document.getElementsByName('search2')[0].value);document.getElementsByName('search2')[0].value = ''; return false;}catch(e){} }" class="form-control search-query">
+				</div>
+			</form>
+			<p class="graylink pull-right rightMenus">
+				<a href="/">Home</a>
+				<!-- <a href="/tag">Tags</a> -->
+				<a href="/guestbook">Guestbook</a>
+				<!-- <a href="/category">Recents</a> -->
+				<a href="http://www.gurucat.net/" target="_blank">Gurucat.net</a>
+			</p>
+			<h3><a href="/">[##_title_##]</a></h3>
+			<p class="text-muted">개초보 개발자 하얀쿠아 - 좌충우돌 소프트웨어 하드웨어 펌웨어 개발기록들</p>
+		</div>
+	</div>
+</div>
+<!--F 고정 상단 네비게이션 바 시작(모바일/스크롤 시) -->
+<div id="fixedNav" class="visible-xs navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<span class="lntoggle visible-xs"><i class="fa fa-list-ul fa-2x fa-fw"></i></span>
+	<div id="searchButton" class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-search fa-2x fa-fw"></i></div>
+	<div class="container">
+	  <div class="navbar-header">
+	  	<!--F 모바일 제목 -->
+	    <div class="visible-xs" style="overflow:hidden; height:50px; line-height:2.5em; font-size: 1.4em; font-weight: bold; text-align: center; color: #fff;">[##_title_##]</div>
+		<a id="blog_title" class="navbar-brand dropdown-toggle hidden-xs" data-toggle="dropdown" href="/">[##_title_##]</a>
+	  </div>
+	  <div class="collapse navbar-collapse">
+		<ul class="nav navbar-nav navbar-right">
+		  <li id="navbar-page"><a href="/" title="Home"><i class="fa fa-home fa-fw fa-2x"></i><span class="visible-xs"> 홈 바로가기</span></a></li>
+		  <li id="navbar-tag"><a href="/tag" title="Tags"><i class="fa fa-tags fa-fw fa-2x"></i><span class="visible-xs"> 태그</span></a></li>
+		  <li id="navbar-guestbook"><a href="/guestbook" title="Guestbook"><i class="fa fa-book fa-fw fa-2x"></i><span class="visible-xs"> 방명록</span></a></li>
+		  <li><a href="/category"><i class="fa fa-th fa-fw fa-2x"></i><span class="visible-xs"> 모든 포스팅</span></a></li>
+		  <!--F 필요한 티스토리 추가 메뉴가 있으시면 주석에서 꺼내 쓰세요
+		  <li id="navbar-media"><a href="/media"><ㅌㅌi class="fa fa-video-camera fa-fw fa-2x"></i><span class="visible-xs">  Media</span></a></li>
+		  <li id="navbar-location"><a href="/location"><i class="fa fa-map-marker fa-fw fa-2x"></i><span class="visible-xs"> Location</span></a></li>
+		  <li id="navbar-rss"><a href="[##_rss_url_##]" onclick="window.open(this.href); return false" title="[##_title_##] 구독하기"><i class="fa fa-rss fa-fw fa-2x"></i><span class="visible-xs"> RSS</span></a></li>-->
+		  <!--F 검색 모듈 -->
+		  <s_search>
+		  <form id="search_fix" class="navbar-form navbar-right" role="search">
+			  <div class="form-search search-only">
+				  <i class="fa fa-search-plus search-icon"></i>
+				  <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" class="form-control search-query">
+			  </div>
+		  </form>
+		  </s_search>
+		</ul>
+	  </div>
+	</div>
+</div>
+<!--F 상단 네비게이션 바 끝 -->
+<s_t3>
+<div id="secondNavWrap" class="hidden-xs">
+	<div id="secondNav" class="container">
+		[##_category_list_##]
+		<!--F Breadcrumb (Locator) -->
+		<div id="bread_nav"><a href="/"><i class="fa fa-home"></i> Home</a></div>
+	</div>
+</div>
+<div class="container">
+	<!-- Table of Contents javascript load -->
+	<!--<script src="./images/jquery-1.8.3.min.js"></script>-->
+	<!--<script src="./images/jquery-ui-1.9.1.custom.min.js"></script>
+	<script src="./images/jquery.tocify.js"></script>
+	<script>
+		if(!rssLogFlag) {
+			if(window.getWindowCleintWidth()>=768){
+				$(function() {
+					var toc = $("#toc").tocify({
+						selectors: "h2,h3,h4"
+					}).data("toc-tocify");
+					// Writes all of the current plugin options to the console
+					//console.log(toc.options);
+				});
+			}
+		}
+	</script>-->
+	<!-- [Advertisement] adpos-hidden : layers for hiding Ads -->
+	<div id="adpos-hidden" style="display:none;">		
+	</div>
+	<div id="adpos-contents-mid" style="width:100%;text-align:center;">
+		<script>
+			if($(".mid-ad").length>0) {
+				if(window.getWindowCleintWidth()>=768) {
+					document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span><span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
+				} else {
+					document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5538676763841252" data-ad-slot="8323830125" data-ad-format="auto"></ins>');
+				}
+			}
+		</script>
+	</div>
+	<!-- [Advertisement] admos-vertical : Layers for showing vertical-type Ads if resolution which is above 1550 px  -->
+	<div id="adpos-vertical" style="float:left;height:auto;margin-left:-200px;border:1px solid black;">
+		<script>
+			document.write('<ins id="movead-vertical-1550" class="adsbygoogle" style="display:inline-block;width:160px;height:600px;margin:auto;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="1206019321"></ins>');
+		</script>
+	</div>
+	<div class="row">
+		<div id="coverDiv"><div class="info col-md-12 hidden"><h3>[##_title_##]</h3><p class="text-muted">[##_desc_##]</p></div><div class="loading"></div></div>
+		<div id="leftContent" class="col-md-9">
+			<div id="content">
+			<!--F 추천 광고위치 1 : 포스팅 제목 윗부분(모든 페이지에 출력) --> 
+			<!--F 태그 -->
+			<s_tag>
+			<div id="taglog">
+				<h3 class="title"><i class="fa fa-tags"></i> Tag Cloud</h3>
+				<ul>
+					<s_tag_rep>	<li><a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a></li></s_tag_rep>
+				</ul>
+			</div>
+			</s_tag>
+			<!--F 지역로그 -->
+			<s_local>
+			<h3 class="title"><i class="fa fa-map-marker"></i> Location log</h3>
+			<div style="padding:20px;">
+				<s_local_spot_rep>
+					<div class="spot" style="margin-left:[##_local_spot_depth_##]px">
+						<i class="fa fa-location-arrow"></i> [##_local_spot_##]
+					</div>
+				</s_local_spot_rep>
+				<s_local_info_rep>
+					<div class="info" style="margin-left:[##_local_info_depth_##]px">
+						<a href="[##_local_info_link_##]">[##_local_info_title_##]</a>
+					</div>
+				</s_local_info_rep>
+			</div>
+			</s_local>
+			<!--F 방명록 -->
+			<s_guest>
+			<h3 class="title"><i class="fa fa-book"></i> Guestbook</h3>
+			<s_guest_input_form>
+			<!--F 방명록쓰기 -->
+			<div id="guestWrite">
+				<s_guest_member>
+					<s_guest_form>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+								<input class="form-control" placeholder="Name" type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]"/>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+								<input class="form-control" placeholder="Password" type="password" name="[##_guest_input_password_##]" value="" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-home fa-fw"></i></span>
+								<input class="form-control" placeholder="Homepage" type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" />
+							</div>
+						</div>
+					</div>
+					</s_guest_form>
+					<div class="row">
+						<div class="col-sm-12">
+							<input style="display:inline;" type="checkbox" id="[##_guest_input_is_secret_##]" name="[##_guest_input_is_secret_##]" class="checkbox" value="1" />
+							<span>이 글을 비밀글로</span>
+						</div>
+					</div>
+				</s_guest_member>
+				<div class="row">
+					<div class="col-sm-12">
+						<textarea class="form-control" placeholder="내용을 입력하세요." name="[##_guest_textarea_body_##]" rows="6"></textarea>
+					</div>
+				</div>
+				<button class="btn btn-primary" type="submit" onclick="[##_guest_onclick_submit_##]" class="submit">
+					<i class="fa fa-check"></i>
+					등록
+				</button>
+			</div>
+			</s_guest_input_form>
+			<s_guest_container>
+			<!--F 방명록읽기 -->
+			<div id="guestList">
+				<ol>
+					<s_guest_rep>
+					<li id="[##_guest_rep_id_##]">
+						<div class="media">
+							<div class="pull-left"><img src="http://tistory1.daumcdn.net/tistory/1613108/skin/images/user.png?=18660752150.5679849039297551" style="width:60px;border-radius:50em;margin:3px 3px 3px 10px;"/></div>
+							<div class="writer_info">
+								<div class="comment-action">
+									<a href="javascript:function none(){return false}" onclick="this.parentNode.getElementsByTagName('ul')[0].style.display='block';this.parentNode.removeChild(this);"><i class="fa fa-ellipsis-h fa-2x"></i></a>
+									<ul class="list-inline">
+										<li>
+											<a href="#" onclick="[##_guest_rep_onclick_reply_##]" title="댓글쓰기">
+											  <i class="fa fa-share fa-2x"></i>
+											</a>
+										</li>
+										<li>
+											<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify" title="수정/삭제">
+											  <i class="fa fa-trash-o fa-2x"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<ul class="list-unstyled">
+									<li>[##_guest_rep_name_##]</li>
+									<li class="time">
+										[##_guest_rep_date_##]
+									</li>
+								</ul>
+							</div>
+							<div class="media-body">
+							[##_guest_rep_desc_##] 
+							</div>
+						</div>
+						<s_guest_reply_container>
+						<ul class="list-unstyled">
+							<s_guest_reply_rep>
+							<li id="[##_guest_rep_id_##]">
+								<div class="media reply">
+									<div class="pull-left"><img src="http://tistory1.daumcdn.net/tistory/1613108/skin/images/user.png?=18660752150.5679849039297551" style="width:60px;border-radius:50em;margin:3px 3px 3px 10px;"/></div>
+									<div class="writer_info">
+										<div class="comment-action">
+											<a href="javascript:function none(){return false}" onclick="this.parentNode.getElementsByTagName('ul')[0].style.display='block';this.parentNode.removeChild(this);"><i class="fa fa-ellipsis-h fa-2x"></i></a>
+											<ul class="list-inline">
+												<li>
+													<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify" title="수정/삭제">
+													  <i class="fa fa-trash-o fa-2x"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<ul class="list-unstyled">
+											<li>[##_guest_rep_name_##]</li>
+											<li class="time">
+												[##_guest_rep_date_##]
+											</li>
+										</ul>
+									</div>
+									<div class="media-body">
+										[##_guest_rep_desc_##]
+									</div>
+								</div>
+							</li>
+							</s_guest_reply_rep>
+						</ul>
+						</s_guest_reply_container>
+					</li>
+					</s_guest_rep>
+				</ol>
+			</div>
+			</s_guest_container>
+			</s_guest>
+			<!--F 본문검색리스트 -->
+			<s_list>
+			<span id="current_category" class="hidden">[##_list_conform_##]</span>
+			<h3 class="title"><i class="fa fa-search"></i> [##_list_conform_##]: [##_list_count_##]개의 글</h3>
+			<div class="btn-group pull-right" style="margin-top:5px;">
+				<button id="btnGallery" type="button" class="btn btn-default" onclick="setMode(0)"><i class="fa fa-th"></i> Gallery</button>
+				<button type="button" class="btn btn-default" onclick="setMode(1)"><i class="fa fa-list"></i> List</button>
+				<button type="button" class="btn btn-default" onclick="setMode(2)"><i class="fa fa-align-justify"></i> Title</button>
+			</div>
+			<div class="clearfix"></div>
+			<!--F 추천 광고위치 2 : 검색결과 상단 부분 -->
+			<div id="search_list" style="display:none;"><ol></ol></div>
+			<div id="search_title" style="display:none;"><ol></ol></div>
+			<script>var srchL=document.getElementById("search_list").getElementsByTagName("ol")[0];var srchT=document.getElementById("search_title").getElementsByTagName("ol")[0];var rMode;</script>
+			<div id="search_gallery" class="js-masonry" data-masonry-options='{ "itemSelector": ".msnry_item" }'>
+				<s_list_rep>
+				<div class="col-xs-12 col-md-4 col-sm-6 msnry_item">
+					<div class="msnry_inwrapper">
+						<div class="msnry_box">
+							<span class="cnt badge badge-danger pull-right">[##_list_rep_rp_cnt_##]</span>
+							<div class="msnry_title">
+								<a href="[##_list_rep_link_##]"><i class="fa fa-file-o"></i> [##_list_rep_title_##]</a>
+		                    </div>
+							<a href="[##_list_rep_link_##]"><span class="thumb"><img alt="" class="dno"></span></a>
+							<div class="msnry_date">
+		                        <span class="pull-right"><i class="fa fa-clock-o"></i> [##_list_rep_regdate_##]</span>
+		                        <div class="clearfix"></div>
+		                    </div>
+		                </div>
+	            	</div>
+					<div id="titleTmp">[##_list_rep_title_##]</div>
+					<script>
+						var titleTmp = document.getElementById('titleTmp');
+						srchL.innerHTML += '<li><a href="[##_list_rep_link_##]"><span class="thumb"><img src="http://cfile6.uf.tistory.com/image/2714794F5303740F17001C" alt="" class="dno"></span>'+titleTmp.innerHTML+'</a> <span class="cnt badge badge-danger">[##_list_rep_rp_cnt_##]</span><br/><span class="date">[##_list_rep_regdate_##]</span></li>';
+						srchT.innerHTML += '<li><span class="date">[##_list_rep_regdate_##]</span> <a href="[##_list_rep_link_##]">'+titleTmp.innerHTML+'</a> <span class="cnt badge badge-danger">[##_list_rep_rp_cnt_##]</span></li>';
+						titleTmp.parentNode.removeChild(titleTmp);
+					</script>
+				</div>
+				</s_list_rep>
+			</div>
+			<script>
+				function getCookie(cname){var name=cname+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i].trim();if(c.indexOf(name)==0){rVal=c.substring(name.length,c.length);if(ielt9 ==1 && cname == "rMode" && rVal == 0) return 1;else return rVal}}if(ielt9==1&&cname=="rMode")return 1;else return ""}
+				function setCookie(name,value,expiredays){var todayDate=new Date();todayDate.setDate(todayDate.getDate()+expiredays);document.cookie=name+"="+escape(value)+"; path=/; expires="+todayDate.toGMTString()+";"}
+				rMode = getCookie('rMode');
+				if (rMode == '') {
+					rMode = f_categoryDefaultMode; // Deafault Mode
+					setCookie('rMode',rMode,365);
+				}
+				if(rMode == 0){document.getElementById('search_gallery').style.display='block';document.getElementById('search_list').style.display='none';document.getElementById('search_title').style.display='none'}else if(rMode == 1){document.getElementById('search_gallery').style.display='none';document.getElementById('search_gallery').className='';document.getElementById('search_list').style.display='block';document.getElementById('search_title').style.display='none'}else if(rMode == 2){document.getElementById('search_gallery').style.display='none';document.getElementById('search_gallery').className='';document.getElementById('search_list').style.display='none';document.getElementById('search_title').style.display='block'}
+			</script>
+			<!--[if (gt IE 8)|!(IE)]><!-->
+			<script type="text/javascript" src="./images/imagesloaded.min.js"></script>
+			<script type="text/javascript" src="./images/masonry.min.js"></script>
+			<script>var msnry; var container = document.querySelector("#search_gallery"); msnry = new Masonry( container );
+			</script>
+			<!--<![endif]-->
+			<script>if(ielt9==1){window.jQuery||document.write('<script src="./images/jquery-1.11.0.min.js"><\/script>');document.getElementById('btnGallery').style.display='none'}
+			else if(ielt9==0)window.jQuery||document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');
+			// ygal.js by yongzz
+			function ygal(size,mode){return function(j){var i=$(this).find("a").attr("href");var j=size;var d=$(this).find(".thumb img");if(d.hasClass("dno")){$.ajax({url:i,dataType:"html",success:function(b){var g='"';var tl=b.indexOf('<div class="actionTrail">',0);b=b.substring(b.indexOf('<div class="article">',0),tl);var a;e='http://cfile';if(b.match(e+"(.*?)"+g)!=null){a=b.match(e+"(.*?)"+g)[0];a=a.substring(0,a.length-1);d.removeClass("dno");a=a.replace("image",j);a=a.replace("C74x107",j);a=a.replace("S74x74",j);d.attr("src",a.replace('original',j));if(mode==1)imagesLoaded(d,function(){msnry.layout()});}}});}};}
+			function setMode(rMode) {
+				if (rMode == 0) {
+					setCookie('rMode', rMode, 365);
+					location.reload(false);
+				} else if (rMode == 1) {
+					$('#search_title').hide();
+					$('#search_gallery').hide();
+					$('#search_list').show();
+					$("#search_list li").each(ygal("C80x80"));
+					$("#search_list li .badge").each(function() {
+					    var text = $(this).text();
+					    text = text.replace("(", "");
+					    text = text.replace(")", "");
+					    $(this).text(text);
+					    if (text == "") {
+					    	$(this).hide();
+					    }
+					});
+					setCookie('rMode', rMode, 365);
+				} else if (rMode == 2) {
+					$('#search_gallery').hide();
+					$('#search_list').hide();
+					$('#search_title').show();
+					$("#search_title li .badge").each(function() {
+					    var text = $(this).text();
+					    text = text.replace("(", "");
+					    text = text.replace(")", "");
+					    $(this).text(text);
+					    if (text == "") {
+					    	$(this).hide();
+					    }
+					});
+					setCookie('rMode', rMode, 365);
+				}
+			}
+			function ygal_Trigger() {
+				if ($('#search_gallery').size() >= 1) {
+					if (rMode != 0) {  // List or Simple Title
+						setMode(rMode);
+					} else {      // Gallery
+						$("#search_gallery div").each(ygal("R320x0",1));
+					}
+				}
+			}
+			</script>
+			<div class="clearfix"></div>
+			</s_list>
+			<!--F 댓글검색리스트 -->
+			<s_rplist>
+				<h3 class="title"><i class="fa fa-search"></i> '[##_rplist_conform_##]'에 해당되는 댓글 [##_rplist_count_##]건</h3>
+				<div id="searchList">
+				<ol>
+					<s_rplist_rep>
+					<li>
+						<span class="date">[##_rplist_rep_regdate_##]</span>
+						<a href="[##_rplist_rep_link_##]">[##_rplist_rep_body_##]</a>
+						<span class="cnt badge badge-danger">[##_rplist_rep_rp_cnt_##]</span>
+						<span class="name">[##_rplist_rep_name_##]</span>
+					</li>
+					</s_rplist_rep>
+				</ol>
+				</div>
+			</s_rplist>
+			<!--F 공지사항글 -->
+			<s_notice_rep>
+			<h3 class="title"><i class="fa fa-bars"></i> <a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h3>
+			<div class="author"><span class="text">Posted by</span> [##_blogger_##]</div>
+			<div class="article-attr-wrap">
+				<span class="label label-info" style="display:inline"><i class="fa fa-clock-o"></i> [##_notice_rep_date_##]</span>
+				<a class="label-default label" href="#" style="display:inline">
+					<i class="fa fa-list"></i>
+					Notice
+					<span class="caret"></span>
+				</a>
+			</div>
+			<div class="article">
+				<!--F 추천 광고위치 3 : 공지사항 상단 -->
+				[##_notice_rep_desc_##]
+			</div>
+			</s_notice_rep>
+			<!--F 보호글 -->
+			<s_article_protected>
+			<h3 class="title"><i class="fa fa-bars"></i> <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h3>
+			<div class="author"><span class="text">Posted by</span> [##_blogger_##]</div>
+			<div class="article-attr-wrap">
+				<span class="label label-info" style="display:inline"><i class="fa fa-clock-o"></i> [##_article_rep_date_##]</span>
+			</div>
+			<div style="text-align: center;">
+				보호되어 있는 글입니다. <br />
+				내용을 보시려면 비밀번호를 입력하세요.<br/><br/>
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						<div class="input-group">
+							<input class="form-control" placeholder="Password"  id="[##_article_password_##]" name="[##_article_password_##]" type="password" onkeydown="if (event.keyCode == 13) [##_article_dissolve_##]" class="text" value="" />
+							<span class="input-group-btn">
+								<button class="btn btn-primary" class="submit" value="확인" onclick="[##_article_dissolve_##]" data-type="last">
+									<i class="fa fa-check"></i>
+									확인
+								</button>
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
+			</div>
+			</s_article_protected>
+			<!--F 포스트의 본문 시작 -->
+			<s_article_rep>
+				<article>
+				<h3 class="title">
+				<i class="fa fa-bars"></i> <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h3>
+				<div class="author"><span class="text">Posted by</span> [##_article_rep_author_##]</div>
+				<div class="article-attr-wrap">
+					<!--F 포스트관리(관리자에게만 보이는 메뉴) -->
+					<s_ad_div>
+					<span class="label label-default">[##_s_ad_s1_label_##]</span>
+					<i class="fa fa-arrow-right"></i>
+					<a href="#" class="label label-default" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a>
+					<a class="label label-warning" href="[##_s_ad_m_link_##]" title="수정">Modify</a>
+					<a class="label label-warning" href="#" onclick="[##_s_ad_m_onclick_##]" title="수정(창으로)">Modify (new window)</a>
+					<a class="label label-info" href="#" onclick="[##_s_ad_t_onclick_##]" title="관련글(트랙백)">Trackback</a>
+					<a class="label label-danger" href="#" onclick="[##_s_ad_d_onclick_##]" title="삭제">Delete</a>
+					</s_ad_div>
+					<span class="label label-info" style="display:inline"><i class="fa fa-clock-o"></i> [##_article_rep_date_##]</span>
+					<a class="label-default label" href="[##_article_rep_category_link_##]" style="display:inline">
+						<i class="fa fa-folder-open"></i>
+						[##_article_rep_category_##]
+						<span class="caret"></span>
+					</a>
+					<div id="current_category" class="hidden">[##_article_rep_category_##]</div>
+				</div>
+				
+				<!--F 포스트 본문 내용 -->
+				<div class="article">
+					<!-- [광고] Google AdSense 본문상단,desktop -->
+					<div style="text-align:center;margin:10px 5px 10px 5px;padding:10px;">
+						<script>
+						if(!rssLogFlag&&window.getWindowCleintWidth()>=768){
+							document.write('<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;margin-right:15px;margin-left:15px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>');
+							document.write('<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;margin-right:15px;margin-left:15px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>');
+						}
+						</script>
+					</div>
+					<!-- [광고] Google AdSense mobile 해상도 -->
+					<div style="text-align:center;width:100%;">
+						<script>
+						if(!rssLogFlag){
+							if(window.getWindowCleintWidth()<768) {								
+								document.write('<ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="3278181725"></ins>');
+							}
+						}
+						</script>
+					</div>
+					<!-- Table of Contents -->
+					<div id="toc"></div>
+					[##_article_rep_desc_##]
+					<script>
+					<!-- [광고] Google AdSense 본문하단 '카테고리의 다른글' 좌측 -->
+					if (!rssLogFlag) {						
+						if (window.getWindowCleintWidth()>=768){
+							var adTmp = '<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>'; 
+							document.getElementsByClassName('another_category')[0].className+=" col-md-6";
+							document.getElementsByClassName('another_category')[0].style.clear="none";
+							document.getElementsByClassName('another_category')[0].outerHTML='<div style="margin:0 auto;"><div class="col-md-6" style="margin-top:20px; padding:0; text-align:center;">'+adTmp+'</div>'+document.getElementsByClassName('another_category')[0].outerHTML+'<div class="clearfix"></div></div>';
+						} 
+					}
+					</script>
+				</div>
+				<!--F 태그트레일 -->
+				<s_tag_label>
+				<div class="media">
+					<div class="pull-left">
+						<span class="tagText"><i class="fa fa-tags"></i> Tags</span>
+					</div>
+					<div class="media-body">[##_tag_label_rep_##]</div>
+				</div>
+				</s_tag_label>
+				<div class="actionTrail">
+					<a href="#tb" onclick="[##_article_rep_tb_link_##]" title="Trackback" class="label label-info"><i class="fa fa-random"></i> Trackback: [##_article_rep_tb_cnt_##]</a>
+					<a href="#rp" onclick="[##_article_rep_rp_link_##]" title="Comment" class="label label-primary"><i class="fa fa-comments"></i> Comment: [##_article_rep_rp_cnt_##]</a>
+				</div>
+				<!--F 트랙백 -->
+				<s_tb>
+				<div class="trackback">
+					<p><i class="fa fa-random"></i> [##_tb_address_##]</p>
+					<s_tb_container>
+					<ol>
+						<s_tb_rep>
+						<li id="[##_tb_rep_id_##]">
+							<h5><a href="[##_tb_rep_url_##]" onclick="window.open(this.href); return false" rel="external nofollow">[##_tb_rep_title_##]</a></h5>
+							<p>[##_tb_rep_desc_##]</p>
+							<p class="pull-right">
+								<a href="#" onclick="[##_tb_rep_onclick_delete_##]; return false" class="label label-danger" title="삭제"><i class="fa fa-trash-o"></i> DEL</a>
+								<span class="label label-info"><i class="fa fa-clock-o"></i> [##_tb_rep_date_##]</span>
+								<span class="label label-default"><i class="fa fa-pencil"></i> [##_tb_rep_site_##]</span>
+							</p>
+							<p class="clearfix"></p>
+						</li>
+						</s_tb_rep>
+					</ol>
+					</s_tb_container>
+				</div>
+				</s_tb>
+				<s_rp>
+				<div class="comment">
+					<!--F 댓글쓰기 -->
+					<s_rp_input_form>
+					<div class="commentWrite">
+						<s_rp_member>
+							<s_rp_guest>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+										<input class="form-control" placeholder="Name" type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" id="[##_rp_input_name_##]_[##_article_rep_id_##]" />
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+										<input class="form-control" placeholder="Password" type="password" name="[##_rp_input_password_##]" value="" id="[##_rp_input_password_##]_[##_article_rep_id_##]" class="text" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-home fa-fw"></i></span>
+										<input class="form-control" placeholder="Homepage"  type="text" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" id="[##_rp_input_homepage_##]_[##_article_rep_id_##]" class="text" />
+									</div>
+								</div>
+							</div>
+							</s_rp_guest>
+							<div class="row">
+								<div class="col-sm-12">
+									<input style="display:inline;" type="checkbox" name="[##_rp_input_is_secret_##]" id="[##_rp_input_is_secret_##]_[##_article_rep_id_##]" class="checkbox" />
+									<span>이 댓글을 비밀 댓글로</span>
+								</div>
+							</div>
+						</s_rp_member>
+						<div class="row">
+							<div class="col-sm-12">
+								<textarea class="form-control" placeholder="내용을 입력하세요." name="[##_rp_input_comment_##]" rows="6"></textarea>
+							</div>
+						</div>
+						<button class="btn btn-primary" type="submit" onclick="[##_rp_onclick_submit_##]" class="submit">
+							<i class="fa fa-check"></i>
+							댓글 달기
+						</button>
+					</div>
+					</s_rp_input_form>
+					<!-- 댓글읽기 -->
+					<div class="commentList">
+						<s_rp_container>
+						<ol>
+							<s_rp_rep>
+							<li id="[##_rp_rep_id_##]">
+								<div class="media">
+									<div class="pull-left"><img src="http://tistory1.daumcdn.net/tistory/1613108/skin/images/user.png?=18660752150.5679849039297551" style="width:60px;border-radius:50em;margin:3px 3px 3px 10px;"/></div>
+									<div class="writer_info">
+										<div class="comment-action">
+											<a href="javascript:function none(){return false}" onclick="this.parentNode.getElementsByTagName('ul')[0].style.display='block';this.parentNode.removeChild(this);"><i class="fa fa-ellipsis-h fa-2x"></i></a>
+											<ul class="list-inline">
+												<li>
+													<a href="#" onclick="[##_rp_rep_onclick_reply_##]" title="댓글쓰기">
+														<i class="fa fa-share fa-2x"></i>
+													</a>
+												</li>
+												<li>
+													<a href="[##_rp_rep_link_##]" title="댓글주소">
+														<i class="fa fa-link fa-2x"></i>
+													</a>
+												</li>
+												<li>
+													<a href="#" onclick="[##_rp_rep_onclick_delete_##]"  title="수정/삭제">
+														<i class="fa fa-trash-o fa-2x"></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<ul class="list-unstyled">
+											<li>[##_rp_rep_name_##]</li>
+											<li class="time">[##_rp_rep_date_##]</li>
+										</ul>
+									</div>
+
+									<div class="media-body">
+										[##_rp_rep_desc_##]
+									</div>
+								</div>
+								<s_rp2_container>
+								<ul class="list-unstyled">
+									<s_rp2_rep>
+									<li id="[##_rp_rep_id_##]">
+										<div class="media reply">
+											<div class="pull-left"><img src="http://tistory1.daumcdn.net/tistory/1613108/skin/images/user.png?=18660752150.5679849039297551" style="width:60px;border-radius:50em;margin:3px 3px 3px 10px;"/></div>
+											<div class="writer_info">
+												<div class="comment-action">
+													<a href="javascript:function none(){return false}" onclick="this.parentNode.getElementsByTagName('ul')[0].style.display='block';this.parentNode.removeChild(this);"><i class="fa fa-ellipsis-h fa-2x"></i></a>
+													<ul class="list-inline">
+														<li>
+															<a href="[##_rp_rep_link_##]" title="댓글주소">
+																<i class="fa fa-link fa-2x"></i>
+															</a>
+														</li>
+														<li>
+															<a href="#" onclick="[##_rp_rep_onclick_delete_##]" title="수정/삭제">
+																<i class="fa fa-trash-o fa-2x"></i>
+															</a>
+														</li>
+													</ul>
+												</div>
+												<ul class="list-unstyled">
+													<li>[##_rp_rep_name_##]</li>
+													<li class="time">[##_rp_rep_date_##]</li>
+												</ul>
+											</div>
+											<div class="media-body">
+												[##_rp_rep_desc_##]
+											</div>
+										</div>
+									</li>
+									</s_rp2_rep>
+								</ul>
+								</s_rp2_container>
+							</li>
+							</s_rp_rep>
+						</ol>
+						</s_rp_container>
+					</div>
+				</div>
+				</s_rp>
+			</article>
+			</s_article_rep>
+			<!--F 페이지 -->
+			<s_paging>
+			<!--F 좌우 여백에 이전글 다음글 표시 Script 완벽 동작 버전 by Readiz (1400px 이상) -->
+			<div id="prevTmp" class="hidden"><a [##_prev_page_##] class="[##_no_more_prev_##]"><i class='fa fa-5x fa-chevron-left'></i></a></div>
+			<div id="nextTmp" class="hidden"><a [##_next_page_##] class="[##_no_more_next_##]"><i class='fa fa-5x fa-chevron-right'></i></a></div>
+			<script>
+				document.getElementById("outer_btn_left").innerHTML = document.getElementById("prevTmp").innerHTML;
+				document.getElementById("outer_btn_right").innerHTML = document.getElementById("nextTmp").innerHTML;
+			</script>
+			<div id="paging">
+				<a [##_prev_page_##] class="[##_no_more_prev_##]" id="prevPage" title="이전"><span>&laquo;이전</span>&nbsp;</a>
+				<span class="numbox">
+					<s_paging_rep>
+					<a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+					</s_paging_rep>
+				</span>
+				<a [##_next_page_##] class="[##_no_more_next_##]" id="nextPage" title="다음">&nbsp;<span>다음&raquo;</span></a>
+			</div>
+			</s_paging>
+		</div> <!--F / content -->
+	</div> <!-- /col-md-9 -->
+	<aside><div id="sidebar" class="sidebar col-md-3">
+			<s_sidebar>
+				<s_sidebar_element>
+				<!-- 블로그 설명 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-pencil"></i> Writer</h4>
+					<div class="panel-body" id="blogDesc">
+						<img class="pull-left" src="[##_image_##]" alt="블로그 이미지" />
+						<b>[##_blogger_##]</b><br/>
+						[##_desc_##]
+					</div>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 공지사항 모듈 -->
+				<s_rct_notice>
+					<div class="panel panel-default">
+						<h4 class="panel-heading"><i class="fa fa-comment"></i> Notice</h4>
+						<ul class="list-group list-group-flush">
+							<s_rct_notice_rep>
+								<li class="list-group-item"><a href="[##_notice_rep_link_##]"><i class="fa fa-angle-right"></i> [##_notice_rep_title_##]</a></li>
+							</s_rct_notice_rep>
+						</ul>
+					</div>
+				</s_rct_notice>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 카테고리 모듈 -->
+					<div class="panel panel-default category">
+						<h4 class="panel-heading"><i class="fa fa-list"></i> Category</h4>
+						<div class="panel-body">
+							[##_category_list_##]
+						</div>
+					</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 최근 포스트 모듈 -->
+				<div id="recentPost" class="panel panel-default">
+					<h4 class="panel-heading"><a href="/category"><i class="fa fa-file-o"></i> Writings</a></h4>
+					<ul class="list-group list-group-flush">
+						<s_rctps_rep>
+							<li class="list-group-item">
+								<a href="[##_rctps_rep_link_##]"><span class="thumb"><img src="http://cfile6.uf.tistory.com/image/2714794F5303740F17001C" alt="" class="dno"></span><div style="text-indent:-4px"><i class="fa fa-angle-right"></i>  [##_rctps_rep_title_##] <span class="name">[##_rctps_rep_rp_cnt_##]</span><div class="clearfix"></div></div>
+								</a>
+							</li>
+						</s_rctps_rep>
+					</ul>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 최근 댓글 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-comments"></i> Comments</h4>
+					<ul class="list-group list-group-flush">
+						<s_rctrp_rep>
+						<li class="list-group-item">
+							<a href="[##_rctrp_rep_link_##]">
+								[##_rctrp_rep_desc_##]<br/><span><i class="fa fa-clock-o"></i> [##_rctrp_rep_time_##]</span> <span class="name pull-right"><i class="fa fa-comment"></i> [##_rctrp_rep_name_##]</span> 
+							</a>
+						</li>
+						</s_rctrp_rep>
+					</ul>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 태그목록 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><a href="/tag"><i class="fa fa-tags"></i> Tags</a></h4>
+					<div id="side-tags" class="panel-body">
+						<s_random_tags>
+							<a href="[##_tag_link_##]" class="[##_tag_class_##]"> [##_tag_name_##]</a>
+						</s_random_tags>
+					</div>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 달력 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-calendar"></i> Calendar</h4>
+					<div class="panel-body">
+						<s_custom_calendar>
+						<table class="tt-calendar" cellpadding="0" cellspacing="1" style="width: 100%; table-layout: fixed">
+							<caption class="cal_month"  style="margin-bottom: 10px">
+								<a href="[##_prev_month_##]" title="1개월 앞의 달력을 보여줍니다." class="prev-month"><i class="fa fa-backward"></i></a>
+								<a href="[##_next_month_##]" title="1개월 뒤의 달력을 보여줍니다." class="next-month"><i class="fa fa-forward"></i></a>
+								<a href="[##_this_month_##]" title="현재 달의 달력을 보여줍니다." class="this-month">[##_year_##].[##_month_##]</a>
+							</caption>
+							<s_calendar_header>
+							<thead>
+								<tr>
+									<s_calendar_header_item>
+									<th class="[##_class_##]">[##_title_##]</th>
+									</s_calendar_header_item>
+								</tr>
+							</thead>
+							</s_calendar_header>
+							<s_calendar_days>
+							<tbody>
+								<s_calendar_week>
+								<tr class="[##_class_##]">
+									<s_calendar_days_item>
+									<td class="[##_class_##]">[##_day_##]</td>
+									</s_calendar_days_item>
+								</tr>
+								</s_calendar_week>
+							</tbody>
+							</s_calendar_days>
+						</table>
+						</s_custom_calendar>
+					</div>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 글 보관함 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-folder"></i> Archive</h4>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item archive">
+							<div class="row">
+							<s_archive_rep>
+								<div class="col-xs-4">
+								<a href="[##_archive_rep_link_##]"><i class="fa fa-4x fa-folder-open"></i>
+								<p><span class="name">[##_archive_rep_date_##]</span><br/>
+								[##_archive_rep_count_##] Articles</p></a>
+								</div>
+							</s_archive_rep>
+							</div>
+						</li>
+					</ul>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 최근 트랙백 모듈 -->
+					<div class="panel panel-default">
+						<h4 class="panel-heading"><i class="fa fa-random"></i> Trackbacks</h4>
+						<ul class="list-group list-group-flush">
+							<s_rcttb_rep>
+							<li class="list-group-item">
+								<a href="[##_rcttb_rep_link_##]">
+									[##_rcttb_rep_desc_##]<br/>
+									<span><i class="fa fa-clock-o"></i> [##_rcttb_rep_time_##]</span> <span class="name pull-right"><i class="fa fa-link"></i> [##_rcttb_rep_name_##]</span>
+								</a>
+							</li>
+							</s_rcttb_rep>
+						</ul>
+					</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 링크 모듈 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-link"></i> Links</h4>
+					<select style="width:100%;" onchange="window.open(this.value);">
+						<option value="" select="">Click to move...</option>
+							<s_link_rep>
+							<option value="[##_link_url_##]">[##_link_site_##]</option>
+							</s_link_rep>
+					</select>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- 카운터 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-bar-chart-o"></i> Counter</h4>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<div class="row">
+								<div class="col-xs-4 counter"><i class="fa fa-angle-right"></i> <span class="name">Today</span><br/><span class="count">[##_count_today_##]</span></div>
+								<div class="col-xs-4 counter"><i class="fa fa-angle-right"></i> <span class="name">Yesterday</span><br/><span class="count">[##_count_yesterday_##]</span></div>
+								<div class="col-xs-4 counter"><i class="fa fa-angle-right"></i> <span class="name">Total</span><br/><span class="count">[##_count_total_##]</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- RSS 링크 -->
+				<div class="panel panel-default">
+					<h4 class="panel-heading"><i class="fa fa-rss"></i> RSS Feed</h4>
+					<div class="panel-body">
+					<a class="btn btn-primary" href="[##_rss_url_##]" onclick="window.open(this.href); return false" title="[##_title_##] 구독하기"><i class="fa fa-rss"></i></a>
+					[##_rss_url_##]
+					</div>
+				</div>
+				</s_sidebar_element>
+				<s_sidebar_element>
+				<!-- [광고] AdSense sidebar 광고 -->
+				<script>
+					<!-- AdSense codes -->
+					document.write('<div class="panel panel-default"><h4 class="panel-heading"><i class="fa fa-heart"></i> Ads</h4><div class="panel-body" style="text-align:center;"><ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="3278181725"></ins></div></div>');
+				</script>
+				</s_sidebar_element>
+			</s_sidebar>
+		</div></aside>
+	</div>
+</div>
+</s_t3>
+</div> <!-- /container -->
+	<!--F 푸터메뉴 -->
+    <footer><div id="footer">
+		<div class="container" style="padding-top:7px;">
+		  	<!--F 카피라이트 / 스킨 저작권 부분과 오픈소스 저작권 부분은 손대지 않으셨으면 합니다  -->
+			<div class="row">
+        		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-info-circle fa-2x fa-fw"></i></div>
+					<div class="media-body">
+					<h3>[##_title_##]</h3>
+					<p class="text-muted">Hosted by <a href="http://daum.net" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> · Powered by <a href="http://www.tistory.com" title="Tistory 바로가기">Tistory</a><br/>Skin by <a href="http://readiz.com">Readiz</a> · Based on Bootstrap<br/>Blog Author: [##_blogger_##]</p>
+					</div>
+      			</div>
+        		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
+					<div class="media-body">
+					<h3>Skin Info</h3>
+					<p class="text-muted">"FastBoot 1.6.2" Designed by <a href="http://readiz.com" target="_blank">Readiz</a><br/>Inspired by <a href="http://yongzz.com" target="_blank">yongzz</a>, <a href="http://wincomi.com" target="_blank">wincomi</a>, <a href="http://markquery.com" target="_blank">Ungki. H</a><br/><a href="http://blog.readiz.com/22">Further Information</a>
+					</p>
+					</div>
+				</div>
+        		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-link fa-2x fa-fw"></i></div>
+					<div class="media-body"><h3>Tistory links</h3>
+						<p class="text-muted">
+							<!--F 블로그 사용 환경 (설치형/티스토리)에 맞게 아래 주석으로 처리된 메뉴를 활성화 시키시기 바랍니다. -->
+							<a href="/" title="홈">홈</a> | <a href="[##_taglog_link_##]" title="태그">태그</a> | <a href="[##_blog_link_##]media" title="미디어로그">미디어로그</a><br/>
+							<a href="[##_localog_link_##]" title="지역로그">지역로그</a> | <a href="[##_guestbook_link_##]" title="방명록">방명록</a><br/>
+							<a href="[##_owner_url_##]" title="관리자">관리자</a> | <a href="[##_owner_url_##]/entry/post" title="글쓰기">글쓰기</a>
+							<!-- <a href="[##_keylog_link_##]" class="key" title="키로그">키로그</a><br/> -->
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<hr />
+				<div class="col-md-12">
+					<p class="text-muted">Copyright ⓒ 2013-2017 [##_blogger_##] All rights reserved. / Documentations under Creative Commons Attribution 3.0 / 
+					Open sources are copyright of their respective owners.</p>
+				</div>
+			</div>
+		</div>
+    </div></footer>
+	<!--F OffCanvas -->
+	<div id="lnav"></div>
+	<div class="hidden" id="category_tmp">[##_category_list_##]</div>
+	<script>if (ielt9 == 1) window.jQuery || document.write('<script src="./images/jquery-1.11.0.min.js"><\/script>');
+	else if(ielt9 == 0) window.jQuery || document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');</script>
+	<!--F Login Button Mapping -->
+	<script>
+		/* [Advertisement] 해상도 변화에 따라 좌측 세로형 광고를 보여주거나 사라지게 함 */
+		function contentsAdLocate() {
+			/* 본문 광고 삽입 */
+			if($(".mid-ad").length>0) {
+				var adpos_mid = $("#adpos-contents-mid");
+				$(".mid-ad").each(function(index) {
+					adpos_mid.clone().appendTo($(this));
+				});
+				adpos_mid.remove();
+				// $("#mid-ad").append($("#adpos-contents-mid"));
+			}else{
+				$("#adpos-contents-mid").remove();
+			}
+		}
+		var mode = 1;
+		function adLocate() {
+			if (window.getWindowCleintWidth() >= 1550) {
+				old_mode = mode; mode = 1;
+				if (old_mode != mode) {
+					$("#adpos-vertical").append($("#movead-vertical-1550")); 
+				}
+			} else {
+				old_mode = mode; mode = 0;
+				if (old_mode != mode) {
+					$("#adpos-hidden").append($("#movead-vertical-1550")); 
+				}				
+			}
+		}
+		function mappingLoginBtn() {
+			var tmpLogin = document.getElementsByClassName("tt_menubar_logout")[0].getElementsByTagName("a")[0];
+			tmpLogin.className = "";
+			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그아웃",'<i class="fa fa-unlock fa-fw"></i> Logout');
+			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그인",'<i class="fa fa-lock fa-fw"></i> Login');
+			document.getElementById("loginout_append").innerHTML = tmpLogin.outerHTML; 
+			//$('#lnav ul li ul a')[0].outerHTML = tmpLogin.outerHTML;
+		}
+		function onReadyFn (jQuery) {
+			/* code to run when the document is ready */
+			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
+			mappingLoginBtn();
+			adLocate();
+			contentsAdLocate();			
+
+			/* adLocate() function would be called when window-resize event */
+			window.onresize = function() { adLocate() };
+		}
+		$(document).ready(onReadyFn);
+	</script>
+	<!--F FastBoot_Plugins -->
+	<script>
+	if(rssLogFlag==1){
+		var isMobile;
+		if(window.getWindowCleintWidth()>=768)
+			isMobile = 0;
+		else if(window.getWindowCleintWidth()<768)
+			isMobile = 1;
+		document.write('<script src="./images/fastboot_index.js?061206"><\/script>');
+	}
+	</script>
+    <script src="./images/fastboot.min.js"></script>
+    <!--[if (gt IE 8)|!(IE)]><!--><script src="./images/fastboot_offcanvas.min.js"></script><!--<![endif]-->
+	<div id="toTop" onclick="window.scrollTo(0, 0);"><i class="fa fa-angle-double-up fa-2x"></i></div>
+	<!-- [광고] Google AdSense Script 비동기 로드 -->
+	<script>
+	if(rssLogFlag!=1) {
+		document.write('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><\/script>');
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-5538676763841252",
+			enable_page_level_ads: true
+		});
+		$('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});	
+	}
+	</script>
+</body></html>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skin version="0.1" language="ko">
+	<information>
+		<name>FastBoot</name>
+		<version>1.6.2</version>
+		<description>
+			<![CDATA[ 반응형 2단 스킨입니다. 본문 가변입니다. 스킨위자드미지원. IE 7이상 지원. Bootstrap v3.1 적용. 질문은 제 블로그로 해주세요.
+			]]>
+		</description>
+		<license>
+			<![CDATA[제작자 명기 해주세요. by Readiz http://blog.readiz.com]]>
+		</license>
+	</information>
+	<author>
+		<name>Readiz</name>
+		<homepage>http://readiz.com</homepage>
+		<email>readiz@readiz.com</email>
+	</author>
+	<default>
+		<recentEntries>15</recentEntries>
+		<recentComments>5</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>0</expandTrackback>
+		<lengthOfRecentNotice>40</lengthOfRecentNotice>
+		<lengthOfRecentEntry>40</lengthOfRecentEntry>
+		<lengthOfRecentComment>40</lengthOfRecentComment>
+		<lengthOfRecentTrackback>40</lengthOfRecentTrackback>
+		<lengthOfLink>40</lengthOfLink>
+		<showListOnCategory>0</showListOnCategory>
+		<showListOnArchive>0</showListOnArchive>
+		<trackbackMessage>
+			<none>Trackback &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
+			<single>Trackback &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
+		</trackbackMessage>
+		<commentMessage>
+			<none>Comment &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
+			<single>Comment &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
+		</commentMessage>
+		<tree>
+			<color>8A8A8A</color>
+			<bgColor></bgColor>
+			<activeColor>8A8A8A</activeColor>
+			<activeBgColor></activeBgColor>
+			<labelLength>20</labelLength>
+			<showValue>1</showValue>
+		</tree>
+		<contentWidth>1000</contentWidth>
+		<toolbar>white</toolbar>
+		<layout>2</layout>
+	</default>
+</skin>

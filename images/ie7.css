@@ -1,0 +1,67 @@
+/* IE7.css by readiz */
+/* for IE7 */
+.navbar, #bread_nav, #footer, .commentWrite, .article-attr-wrap, #lnav, .comment-action, #secondNavWrap, #desktopNav {
+  display: none;
+}
+body {
+  padding-top: 0;
+  background-color: #fff;
+}
+.col-md-9, #wrap, .container, .row {
+  position:relative;
+  margin:auto;
+  width:100%;
+  padding:0;
+}
+#sidebar {
+  display:block;
+  width:29%; 
+  float:right;
+  text-align:left;
+  position:absolute !important;
+  top:0 !important;
+  right:0 !important;
+}
+#sidebar .panel {
+  border:1px solid #e6e9ed;
+  width:100%;
+  text-align:left;
+}
+#sidebar .panel li{
+  border-bottom:1px solid #e6e9ed;
+}
+#leftContent {
+  text-align:right;
+  width: 69%; 
+  float: left;
+}
+#content {
+  margin-left:5%;
+  width:100%;
+  text-align:left;
+}
+#guestList .writer_info img,
+.commentList .writer_info img{
+  display:none;
+}
+#sidebar .c_cnt, #recentPost .thumb img, #recommended .thumb img{
+  float:none;
+}
+#sidebar #blogDesc img {
+  width:100px;
+}
+#sidebar .panel li {
+  border-left:none;
+  border-right:none;
+}
+#recentPost .name, #recommended .name, #sidebar .btn, #sidebar i, form, #toTop {
+  display:none;
+}
+#sidebar .pull-right {
+  float: none !important;
+}
+#sidebar .col-xs-4 {
+  width:30%;
+}
+#ie_topbar {position:fixed; top:40px; width:100%; height:40px; background-color:#656D78; margin-top:0px; padding:10px; color:white; font-weight:bold;}
+#ie_topbar a { color: #fff; }
