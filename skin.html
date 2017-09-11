@@ -84,7 +84,7 @@ if(!f_enableTedition && url[1] == '') {
 				<!-- <a href="/tag">Tags</a> -->
 				<a href="/guestbook">Guestbook</a>
 				<!-- <a href="/category">Recents</a> -->
-				<a href="http://www.gurucat.net/" target="_blank">Gurucat.net</a>
+				<a href="http://www.gurucat.net/" target="_blank">GURUCAT.Net</a>
 			</p>
 			<h3><a href="/">[##_title_##]</a></h3>
 			<p class="text-muted">개초보 개발자 하얀쿠아 - 좌충우돌 소프트웨어 하드웨어 펌웨어 개발기록들</p>
@@ -156,7 +156,7 @@ if(!f_enableTedition && url[1] == '') {
 	</div>
 	<div id="adpos-contents-mid" style="width:100%;text-align:center;">
 		<script>
-			if($(".mid-ad").length>0) {
+			if(!rssLogFlag) {
 				if(window.getWindowCleintWidth()>=768) {
 					document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span><span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
 				} else {
@@ -540,9 +540,10 @@ if(!f_enableTedition && url[1] == '') {
 					<!-- Table of Contents -->
 					<div id="toc"></div>
 					[##_article_rep_desc_##]
-					<script>
+
 					<!-- [광고] Google AdSense 본문하단 '카테고리의 다른글' 좌측 -->
-					if (!rssLogFlag) {						
+					<script>
+					if (!rssLogFlag) {					
 						if (window.getWindowCleintWidth()>=768){
 							var adTmp = '<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>'; 
 							document.getElementsByClassName('another_category')[0].className+=" col-md-6";
@@ -944,7 +945,7 @@ if(!f_enableTedition && url[1] == '') {
         		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-info-circle fa-2x fa-fw"></i></div>
 					<div class="media-body">
 					<h3>[##_title_##]</h3>
-					<p class="text-muted">Hosted by <a href="http://daum.net" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> · Powered by <a href="http://www.tistory.com" title="Tistory 바로가기">Tistory</a><br/>Skin by <a href="http://readiz.com">Readiz</a> · Based on Bootstrap<br/>Blog Author: [##_blogger_##]</p>
+					<p class="text-muted">Hosted by <a href="http://daum.net" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> · Powered by <a href="http://www.tistory.com" title="Tistory 바로가기">Tistory</a><br/>Skin by <a href="http://readiz.com">Readiz</a> · Based on Bootstrap<br/>Blog Author: <a href="http://gurucat.net">[##_blogger_##]</a></p>
 					</div>
       			</div>
         		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
@@ -985,15 +986,17 @@ if(!f_enableTedition && url[1] == '') {
 		/* [Advertisement] 해상도 변화에 따라 좌측 세로형 광고를 보여주거나 사라지게 함 */
 		function contentsAdLocate() {
 			/* 본문 광고 삽입 */
-			if($(".mid-ad").length>0) {
-				var adpos_mid = $("#adpos-contents-mid");
-				$(".mid-ad").each(function(index) {
-					adpos_mid.clone().appendTo($(this));
-				});
-				adpos_mid.remove();
-				// $("#mid-ad").append($("#adpos-contents-mid"));
-			}else{
-				$("#adpos-contents-mid").remove();
+			var midAd = document.getElementsByClassName("mid-ad");
+			var midAdContents = document.getElementById("adpos-contents-mid");
+			if(midAdContents) {
+				if (midAd){
+					for(i=0;i<midAd.length;i++){
+						midAd[i].innerHTML = midAdContents.innerHTML;
+						midAd[i].setAttribute("style", midAdContents.getAttribute("style"));
+					}
+					//document.write('<div class="clearfix"></div>');
+				}
+				midAdContents.remove();
 			}
 		}
 		var mode = 1;
@@ -1021,10 +1024,9 @@ if(!f_enableTedition && url[1] == '') {
 		function onReadyFn (jQuery) {
 			/* code to run when the document is ready */
 			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
-			mappingLoginBtn();
 			adLocate();
-			contentsAdLocate();			
-
+			contentsAdLocate();
+			mappingLoginBtn();
 			/* adLocate() function would be called when window-resize event */
 			window.onresize = function() { adLocate() };
 		}
