@@ -882,7 +882,7 @@ div.another_category table td{
   opacity: 0.9;
 }
 #lnav {
-  background-color: #566269;
+  background-color: #ED293E;
   z-index:10000;
   position: fixed;
   width:220px;
@@ -908,7 +908,7 @@ div.another_category table td{
   left: -220px;
 }
 #lnav ul li ul {
-  background-color: #3F484D;
+  background-color: #AF192A;
 }
 #lnav a,
 #lnav .actoggle {

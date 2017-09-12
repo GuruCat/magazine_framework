@@ -983,7 +983,6 @@ if(!f_enableTedition && url[1] == '') {
 	else if(ielt9 == 0) window.jQuery || document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');</script>
 	<!--F Login Button Mapping -->
 	<script>
-		/* [Advertisement] 해상도 변화에 따라 좌측 세로형 광고를 보여주거나 사라지게 함 */
 		function contentsAdLocate() {
 			/* 본문 광고 삽입 */
 			var midAd = document.getElementsByClassName("mid-ad");
@@ -1001,6 +1000,7 @@ if(!f_enableTedition && url[1] == '') {
 		}
 		var mode = 1;
 		function adLocate() {
+			/* [Advertisement] 해상도 변화에 따라 좌측 세로형 광고를 보여주거나 사라지게 함 */
 			if (window.getWindowCleintWidth() >= 1550) {
 				old_mode = mode; mode = 1;
 				if (old_mode != mode) {
