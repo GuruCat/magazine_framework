@@ -61,9 +61,10 @@ if(!f_enableTedition && url[1] == '') {
 <!-- highlight.js의 theme -->
 <link rel="stylesheet" href="./images/monokai-sublime.css">
 <!-- highlight.js의 초기화 함수 호출 -->
-<script>
-	hljs.initHighlightingOnLoad();
-</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- GoogleAdSense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head><body id="[##_body_id_##]">
 <!--F 빅 사이즈 좌우 버튼 (1400px 이상 좌우 배치) -->
 <div id="outer_btn_left" class="hidden"></div>
@@ -151,10 +152,8 @@ if(!f_enableTedition && url[1] == '') {
 			}
 		}
 	</script>-->
-	<!-- [Advertisement] adpos-hidden : layers for hiding Ads -->
-	<div id="adpos-hidden" style="display:none;">		
-	</div>
-	<div id="adpos-contents-mid" style="width:100%;text-align:center;">
+
+	<div id="adpos-contents-mid" style="display:none;">
 		<script>
 			if(!rssLogFlag) {
 				if(window.getWindowCleintWidth()>=768) {
@@ -165,10 +164,14 @@ if(!f_enableTedition && url[1] == '') {
 			}
 		</script>
 	</div>
+	<!-- [Advertisement] adpos-hidden : layers for hiding Ads -->
+	<div id="adpos-hidden" style="display:none;"></div>
 	<!-- [Advertisement] admos-vertical : Layers for showing vertical-type Ads if resolution which is above 1550 px  -->
 	<div id="adpos-vertical" style="float:left;height:auto;margin-left:-200px;border:1px solid black;">
 		<script>
-			document.write('<ins id="movead-vertical-1550" class="adsbygoogle" style="display:inline-block;width:160px;height:600px;margin:auto;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="1206019321"></ins>');
+			if(window.getWindowCleintWidth()>=768) {
+				document.write('<ins id="movead-vertical-1550" class="adsbygoogle" style="display:inline-block;width:160px;height:600px;margin:auto;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="1206019321"></ins>');
+			}
 		</script>
 	</div>
 	<div class="row">
@@ -981,7 +984,7 @@ if(!f_enableTedition && url[1] == '') {
 	<div class="hidden" id="category_tmp">[##_category_list_##]</div>
 	<script>if (ielt9 == 1) window.jQuery || document.write('<script src="./images/jquery-1.11.0.min.js"><\/script>');
 	else if(ielt9 == 0) window.jQuery || document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');</script>
-	<!--F Login Button Mapping -->
+	<!--F Document Ready -->
 	<script>
 		function contentsAdLocate() {
 			/* 본문 광고 삽입 */
@@ -991,7 +994,8 @@ if(!f_enableTedition && url[1] == '') {
 				if (midAd){
 					for(i=0;i<midAd.length;i++){
 						midAd[i].innerHTML = midAdContents.innerHTML;
-						midAd[i].setAttribute("style", midAdContents.getAttribute("style"));
+						midAd[i].setAttribute("style", "width:100%;text-align:center;");
+						//midAdContents.getAttribute("style")
 					}
 					//document.write('<div class="clearfix"></div>');
 				}
@@ -1004,22 +1008,22 @@ if(!f_enableTedition && url[1] == '') {
 			if (window.getWindowCleintWidth() >= 1550) {
 				old_mode = mode; mode = 1;
 				if (old_mode != mode) {
-					$("#adpos-vertical").append($("#movead-vertical-1550")); 
+					$("#adpos-vertical").append($("#movead-vertical-1550"));
 				}
 			} else {
 				old_mode = mode; mode = 0;
 				if (old_mode != mode) {
-					$("#adpos-hidden").append($("#movead-vertical-1550")); 
+					$("#adpos-hidden").append($("#movead-vertical-1550"));
 				}				
 			}
 		}
+		/* Login Button Mapping */
 		function mappingLoginBtn() {
 			var tmpLogin = document.getElementsByClassName("tt_menubar_logout")[0].getElementsByTagName("a")[0];
 			tmpLogin.className = "";
 			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그아웃",'<i class="fa fa-unlock fa-fw"></i> Logout');
 			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그인",'<i class="fa fa-lock fa-fw"></i> Login');
 			document.getElementById("loginout_append").innerHTML = tmpLogin.outerHTML; 
-			//$('#lnav ul li ul a')[0].outerHTML = tmpLogin.outerHTML;
 		}
 		function onReadyFn (jQuery) {
 			/* code to run when the document is ready */
@@ -1027,6 +1031,14 @@ if(!f_enableTedition && url[1] == '') {
 			adLocate();
 			contentsAdLocate();
 			mappingLoginBtn();
+
+			/* [광고] Google AdSense Script 비동기 로드 */
+			var adNum = document.getElementsByClassName("adsbygoogle");
+			if (adNum && adNum.length > 0) {
+				console.log("adNum Len = " + adNum.length);
+				for (var i=0;i<adNum.length;++i)
+					(adsbygoogle = window.adsbygoogle || []).push({});
+			}
 			/* adLocate() function would be called when window-resize event */
 			window.onresize = function() { adLocate() };
 		}
@@ -1046,15 +1058,5 @@ if(!f_enableTedition && url[1] == '') {
     <script src="./images/fastboot.min.js"></script>
     <!--[if (gt IE 8)|!(IE)]><!--><script src="./images/fastboot_offcanvas.min.js"></script><!--<![endif]-->
 	<div id="toTop" onclick="window.scrollTo(0, 0);"><i class="fa fa-angle-double-up fa-2x"></i></div>
-	<!-- [광고] Google AdSense Script 비동기 로드 -->
-	<script>
-	if(rssLogFlag!=1) {
-		document.write('<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><\/script>');
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-5538676763841252",
-			enable_page_level_ads: true
-		});
-		$('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});	
-	}
-	</script>
+
 </body></html>
