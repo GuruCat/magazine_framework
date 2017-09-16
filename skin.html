@@ -58,10 +58,14 @@ if(!f_enableTedition && url[1] == '') {
 
 <!-- highlight.js의 core파일 불러오기, https://highlightjs.org/ -->
 <script src="./images/highlight.pack.js"></script>
+<script src="./images/highlightjs-line-numbers.min.js"></script>
 <!-- highlight.js의 theme -->
 <link rel="stylesheet" href="./images/monokai-sublime.css">
 <!-- highlight.js의 초기화 함수 호출 -->
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+	hljs.initHighlightingOnLoad();
+	hljs.initLineNumbersOnLoad();
+</script>
 
 <!-- GoogleAdSense -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -158,8 +162,6 @@ if(!f_enableTedition && url[1] == '') {
 			if(!rssLogFlag) {
 				if(window.getWindowCleintWidth()>=768) {
 					document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span><span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
-				} else {
-					document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5538676763841252" data-ad-slot="8323830125" data-ad-format="auto"></ins>');
 				}
 			}
 		</script>
@@ -552,7 +554,12 @@ if(!f_enableTedition && url[1] == '') {
 							document.getElementsByClassName('another_category')[0].className+=" col-md-6";
 							document.getElementsByClassName('another_category')[0].style.clear="none";
 							document.getElementsByClassName('another_category')[0].outerHTML='<div style="margin:0 auto;"><div class="col-md-6" style="margin-top:20px; padding:0; text-align:center;">'+adTmp+'</div>'+document.getElementsByClassName('another_category')[0].outerHTML+'<div class="clearfix"></div></div>';
-						} 
+						}
+						else if(window.getWindowCleintWidth()<768) {
+							document.write('<ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="8323830125" data-ad-format="auto"></ins>');
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						}
+
 					}
 					</script>
 				</div>
@@ -1035,7 +1042,6 @@ if(!f_enableTedition && url[1] == '') {
 			/* [광고] Google AdSense Script 비동기 로드 */
 			var adNum = document.getElementsByClassName("adsbygoogle");
 			if (adNum && adNum.length > 0) {
-				console.log("adNum Len = " + adNum.length);
 				for (var i=0;i<adNum.length;++i)
 					(adsbygoogle = window.adsbygoogle || []).push({});
 			}
@@ -1043,6 +1049,10 @@ if(!f_enableTedition && url[1] == '') {
 			window.onresize = function() { adLocate() };
 		}
 		$(document).ready(onReadyFn);
+		function scrollToTop() {
+			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+  			return false;
+		}
 	</script>
 	<!--F FastBoot_Plugins -->
 	<script>
@@ -1057,6 +1067,6 @@ if(!f_enableTedition && url[1] == '') {
 	</script>
     <script src="./images/fastboot.min.js"></script>
     <!--[if (gt IE 8)|!(IE)]><!--><script src="./images/fastboot_offcanvas.min.js"></script><!--<![endif]-->
-	<div id="toTop" onclick="window.scrollTo(0, 0);"><i class="fa fa-angle-double-up fa-2x"></i></div>
+	<div id="toTop" onclick="scrollToTop();"><i class="fa fa-angle-double-up fa-2x"></i></div>
 
 </body></html>
