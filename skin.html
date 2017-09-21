@@ -11,6 +11,7 @@
 <meta name="author" content="[##_blogger_##]">
 <meta name="description" content="[##_desc_##]">
 <meta name="generator" content="FastBoot">
+<meta name="google-site-verification" content="rLDsWRJG9YIM-D3NlEyrq92jXx5k9vkLndBVb6cXO9M" />
 <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
 <!-- Table of Contents stylesheet-->
@@ -159,10 +160,8 @@ if(!f_enableTedition && url[1] == '') {
 
 	<div id="adpos-contents-mid" style="display:none;">
 		<script>
-			if(!rssLogFlag) {
-				if(window.getWindowCleintWidth()>=768) {
-					document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span><span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
-				}
+			if(!rssLogFlag && window.getWindowCleintWidth()>=768) {
+				document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span><span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
 			}
 		</script>
 	</div>
@@ -524,11 +523,11 @@ if(!f_enableTedition && url[1] == '') {
 				<!--F 포스트 본문 내용 -->
 				<div class="article">
 					<!-- [광고] Google AdSense 본문상단,desktop -->
-					<div style="text-align:center;margin:10px 5px 10px 5px;padding:10px;">
+					<div style="text-align:center;margin:10px 0px 0px 5px;">
 						<script>
 						if(!rssLogFlag&&window.getWindowCleintWidth()>=768){
-							document.write('<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;margin-right:15px;margin-left:15px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>');
-							document.write('<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;margin-right:15px;margin-left:15px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins>');
+							document.write('<span><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
+							document.write('<span style="margin-left: 20px;"><ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="7208853724"></ins></span>');
 						}
 						</script>
 					</div>
@@ -557,7 +556,6 @@ if(!f_enableTedition && url[1] == '') {
 						}
 						else if(window.getWindowCleintWidth()<768) {
 							document.write('<ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="8323830125" data-ad-format="auto"></ins>');
-							(adsbygoogle = window.adsbygoogle || []).push({});
 						}
 
 					}
@@ -754,7 +752,7 @@ if(!f_enableTedition && url[1] == '') {
 			<s_sidebar>
 				<s_sidebar_element>
 				<!-- 블로그 설명 모듈 -->
-				<div class="panel panel-default">
+				<div class="panel panel-default" id="side-writer">
 					<h4 class="panel-heading"><i class="fa fa-pencil"></i> Writer</h4>
 					<div class="panel-body" id="blogDesc">
 						<img class="pull-left" src="[##_image_##]" alt="블로그 이미지" />
@@ -816,7 +814,7 @@ if(!f_enableTedition && url[1] == '') {
 				</s_sidebar_element>
 				<s_sidebar_element>
 				<!-- 태그목록 모듈 -->
-				<div class="panel panel-default">
+				<div class="panel panel-default" id="side-taglist">
 					<h4 class="panel-heading"><a href="/tag"><i class="fa fa-tags"></i> Tags</a></h4>
 					<div id="side-tags" class="panel-body">
 						<s_random_tags>
@@ -864,7 +862,7 @@ if(!f_enableTedition && url[1] == '') {
 				</s_sidebar_element>
 				<s_sidebar_element>
 				<!-- 글 보관함 모듈 -->
-				<div class="panel panel-default">
+				<div class="panel panel-default" id="side-archive">
 					<h4 class="panel-heading"><i class="fa fa-folder"></i> Archive</h4>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item archive">
@@ -937,8 +935,8 @@ if(!f_enableTedition && url[1] == '') {
 				<s_sidebar_element>
 				<!-- [광고] AdSense sidebar 광고 -->
 				<script>
-					<!-- AdSense codes -->
-					document.write('<div class="panel panel-default"><h4 class="panel-heading"><i class="fa fa-heart"></i> Ads</h4><div class="panel-body" style="text-align:center;"><ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="3278181725"></ins></div></div>');
+					//<!-- AdSense codes -->
+					document.write('<div class="panel panel-default"><h4 class="panel-heading"><i class="fa fa-heart"></i> Sponser</h4><div class="panel-body" style="text-align:center;"><ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-5538676763841252" data-ad-slot="3278181725"></ins></div></div>');
 				</script>
 				</s_sidebar_element>
 			</s_sidebar>
@@ -1032,9 +1030,21 @@ if(!f_enableTedition && url[1] == '') {
 			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그인",'<i class="fa fa-lock fa-fw"></i> Login');
 			document.getElementById("loginout_append").innerHTML = tmpLogin.outerHTML; 
 		}
+		function mobileSideModule() {
+			if (window.getWindowCleintWidth()<768) {
+				var mod_writer = document.getElementById("side-writer");
+				var mod_tags = document.getElementById("side-taglist");
+				var mod_archive = document.getElementById("side-archive");
+
+				if (mod_writer)	mod_writer.remove();
+				if (mod_tags) mod_tags.remove();
+				if (mod_archive) mod_archive.remove();
+			}
+		}
 		function onReadyFn (jQuery) {
 			/* code to run when the document is ready */
 			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
+			mobileSideModule();
 			adLocate();
 			contentsAdLocate();
 			mappingLoginBtn();
