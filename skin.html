@@ -1,22 +1,17 @@
 <!-- FastBoot v1.6.2 by Readiz
-	 Responsive Tistory Skin
-	 http://readiz.com/
+	 Responsive Tistory Skin http://readiz.com/
 	 Open sources are copyright of their respective owners.
 -->
 <!DOCTYPE html><html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> -->
 <meta name="author" content="[##_blogger_##]">
 <meta name="description" content="[##_desc_##]">
 <meta name="generator" content="FastBoot">
 <meta name="google-site-verification" content="rLDsWRJG9YIM-D3NlEyrq92jXx5k9vkLndBVb6cXO9M" />
 <link rel="shortcut icon" href="[##_blog_link_##]favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
-<!-- Table of Contents stylesheet-->
-<!--<link href="./images/bootstrap.css" rel="stylesheet" />-->
-<link href="./images/jquery.tocify.css" rel="stylesheet" />
 <!--F Open Sources are using here: Bootstrap, Bootflat, Fontawesome -->
 <link href="./images/fastboot.css" rel="stylesheet" />
 <link rel="stylesheet" media="screen" type="text/css" href="./style.css" />
@@ -24,8 +19,6 @@
 <title>[##_page_title_##] :: [##_title_##]</title>
 <!--F IE Old Version Compatible -->
 <script>var ielt9 = 0;</script>
-<!--[if lt IE 9]><link href="./images/ie.fix.css?17" rel="stylesheet" /><script>ielt9 = 1</script><![endif]-->
-<!--[if IE 7]><link href="./images/ie7.css?0505" rel="stylesheet" /><div id="ie_topbar">[##_title_##] | <a href="/">Home</a> | <a href="/tag">Tag</a> | <a href="/guestbook">Guestbook</a> | <a href="/admin">Admin</a></div><![endif]-->
 <script>
 /* ----------------- FastBoot Setting Variables ---------------*/
 /* 
@@ -67,10 +60,11 @@ if(!f_enableTedition && url[1] == '') {
 	hljs.initHighlightingOnLoad();
 	hljs.initLineNumbersOnLoad();
 </script>
-
 <!-- GoogleAdSense -->
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head><body id="[##_body_id_##]">
+</head>
+<!-- body -->
+<body id="[##_body_id_##]">
 <!--F 빅 사이즈 좌우 버튼 (1400px 이상 좌우 배치) -->
 <div id="outer_btn_left" class="hidden"></div>
 <div id="outer_btn_right" class="hidden"></div>
@@ -78,6 +72,9 @@ if(!f_enableTedition && url[1] == '') {
 <div id="desktopNav" class="hidden-xs">
 	<div class="container">
 		<p class="graylink pull-right"><a href="/admin" title="Admin"><i class="fa fa-cogs"></i> Manage</a><span id="loginout_append"><a href="https://www.tistory.com/login"><i class="fa fa-lock fa-fw"></i> Login</a></span></p>
+		<div class="pull-left topImg">
+			<img class="topImgTag" src="./images/top.jpg"/>
+		</div>		
 		<div class="navMiddle">
 			<form class="pull-right" role="search">
 				<div class="form-search search-only">
@@ -86,11 +83,8 @@ if(!f_enableTedition && url[1] == '') {
 				</div>
 			</form>
 			<p class="graylink pull-right rightMenus">
-				<a href="/">Home</a>
-				<!-- <a href="/tag">Tags</a> -->
-				<a href="/guestbook">Guestbook</a>
-				<!-- <a href="/category">Recents</a> -->
-				<a href="http://www.gurucat.net/" target="_blank">GURUCAT.Net</a>
+				<a href="/guestbook">게시판</a>
+				<a href="http://www.gurucat.net/" target="_blank">구루-캣.Net</a>
 			</p>
 			<h3><a href="/">[##_title_##]</a></h3>
 			<p class="text-muted">개초보 개발자 하얀쿠아 - 좌충우돌 소프트웨어 하드웨어 펌웨어 개발기록들</p>
@@ -956,14 +950,14 @@ if(!f_enableTedition && url[1] == '') {
 					<p class="text-muted">Hosted by <a href="http://daum.net" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> · Powered by <a href="http://www.tistory.com" title="Tistory 바로가기">Tistory</a><br/>Skin by <a href="http://readiz.com">Readiz</a> · Based on Bootstrap<br/>Blog Author: <a href="http://gurucat.net">[##_blogger_##]</a></p>
 					</div>
       			</div>
-        		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
+        		<div id="skinInfo" class="col-md-4 media"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
 					<div class="media-body">
 					<h3>Skin Info</h3>
 					<p class="text-muted">"FastBoot 1.6.2" Designed by <a href="http://readiz.com" target="_blank">Readiz</a><br/>Inspired by <a href="http://yongzz.com" target="_blank">yongzz</a>, <a href="http://wincomi.com" target="_blank">wincomi</a>, <a href="http://markquery.com" target="_blank">Ungki. H</a><br/><a href="http://blog.readiz.com/22">Further Information</a>
 					</p>
 					</div>
 				</div>
-        		<div class="col-md-4 media"><div class="pull-left"><i class="fa fa-link fa-2x fa-fw"></i></div>
+        		<div id="tistoryLink" class="col-md-4 media"><div class="pull-left"><i class="fa fa-link fa-2x fa-fw"></i></div>
 					<div class="media-body"><h3>Tistory links</h3>
 						<p class="text-muted">
 							<!--F 블로그 사용 환경 (설치형/티스토리)에 맞게 아래 주석으로 처리된 메뉴를 활성화 시키시기 바랍니다. -->
@@ -1030,8 +1024,9 @@ if(!f_enableTedition && url[1] == '') {
 			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그인",'<i class="fa fa-lock fa-fw"></i> Login');
 			document.getElementById("loginout_append").innerHTML = tmpLogin.outerHTML; 
 		}
-		function mobileSideModule() {
+		function cleanupForMobile() {
 			if (window.getWindowCleintWidth()<768) {
+				/* Remove some side-bar module for clean mobile view */
 				var mod_writer = document.getElementById("side-writer");
 				var mod_tags = document.getElementById("side-taglist");
 				var mod_archive = document.getElementById("side-archive");
@@ -1039,12 +1034,18 @@ if(!f_enableTedition && url[1] == '') {
 				if (mod_writer)	mod_writer.remove();
 				if (mod_tags) mod_tags.remove();
 				if (mod_archive) mod_archive.remove();
+
+				/* Remove some footer divisions for clean mobile view */
+				var footer_lnk = document.getElementById("tistoryLink");
+				var footer_sknfo = document.getElementById("skinInfo");
+				if (footer_lnk) footer_lnk.remove();
+				if (footer_sknfo) footer_sknfo.remove();
 			}
 		}
 		function onReadyFn (jQuery) {
 			/* code to run when the document is ready */
 			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
-			mobileSideModule();
+			cleanupForMobile();
 			adLocate();
 			contentsAdLocate();
 			mappingLoginBtn();
