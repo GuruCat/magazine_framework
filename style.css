@@ -235,16 +235,17 @@ h3.title a {
 }
 h3.title {
   color: #fff;
-  line-height:32px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius:3px;
-  padding-top: 3px;
-  padding-bottom: 1.5px;
+  line-height:42px;
+  font-size: 26px;
+  /* font-weight: bold; */
+  /* border-radius:3px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 10px;
-  margin-bottom: 2px;
-  margin-top: 5px;
-  background: #181A1E;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  /* background: #181A1E; */
+  background: #8e8e8e;
 }
 
 #sidebar .panel-heading{margin: 0; font-size:16px;padding:5px 10px;font-weight:700;font-family:Arial, "돋움", Dotum, AppleGothic, sans-serif !important;}
@@ -789,6 +790,36 @@ div.another_category table td{
 #search_gallery div.msnry_date { padding:5px; background-color:#E6E9ED; border-radius: 0 0 5px 5px; }
 #search_gallery div.msnry_date span { color:#000; font-weight:bold; font-size:0.8em; }
 
+/* Table of Contents layer */
+#tocLayer .table-of-contents {
+  background-color: #7f7f7f;
+  padding: 10px;
+  /* border-radius: 5px; */
+}
+#tocLayer h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: clear;
+  padding: 3px;
+  margin: 5px 0;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+#tocLayer a {
+  color: #fff;
+}
+#tocLayer a:hover {
+  color: #181A1E;
+}
+#tocLayer ol {
+  list-style-type:decimal;
+  list-style-position: inside;
+  margin-top:15px;
+  margin-bottom:15px;
+  padding-left:5px;
+  display:block;
+}
+
 /* Article */
 .article ul {
   list-style-type:circle;
@@ -814,15 +845,24 @@ div.another_category table td{
 }
 .article h1, .article h2 , .article h3, .article h4, .article h5, .article h6 { 
   font-size: 24px; 
-  border-bottom: 2px solid #ccc; 
-  border-left: 10px solid #55555B;
-  text-height:200%;
+  /* border-bottom: 2px solid #ccc; 
+  border-left: 10px solid #55555B; */
+  /* text-height:200%; */
   padding: 3px 5px; 
   margin: 5px 0;
   letter-spacing: 1px;
   word-spacing: 3px;
 }
-.article h2 { font-size: 22px; }
+.article h2 {
+  font-size: 22px;
+}
+.article h2:target {
+  animation: highlight 1s ease;
+}
+@keyframes highlight {
+  from { background: #FDEB82; }
+  to { background: white; }
+}
 .article h3 { font-size: 20px; }
 .article h4 { font-size: 18px; }
 .article h5 { font-size: 16px; }

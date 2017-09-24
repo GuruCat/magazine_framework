@@ -495,6 +495,8 @@ if(!f_enableTedition && url[1] == '') {
 					</a>
 					<div id="current_category" class="hidden">[##_article_rep_category_##]</div>
 				</div>
+				<!-- Table of Contents should be placed here -->
+				<div id="tocLayer"></div>
 				
 				<!--F 포스트 본문 내용 -->
 				<div class="article">
@@ -517,8 +519,6 @@ if(!f_enableTedition && url[1] == '') {
 						}
 						</script>
 					</div>
-					<!-- Table of Contents -->
-					<div id="toc"></div>
 					[##_article_rep_desc_##]
 
 					<!-- [광고] Google AdSense 본문하단 '카테고리의 다른글' 좌측 -->
@@ -967,6 +967,41 @@ if(!f_enableTedition && url[1] == '') {
 	else if(ielt9 == 0) window.jQuery || document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');</script>
 	<!--F Document Ready -->
 	<script>
+		function scrollToC(idToc) {
+			console.log("idToc : " + idToc);
+			var elem = $("#" + idToc);
+			if (elem) {
+				var offset = elem.offset();
+				console.log("offset : " + offset.top)
+				$('html, body').animate({scrollTop : offset.top - 150}, 400);
+			}
+		}
+		function generateToC() {
+			var ToC = "<div class='table-of-contents'><h2>Contents:</h2>";
+			var newLine, el, title, link;
+			var toc_idx=1;
+			var genId;
+			$(".article h2").each(function() {
+				// loop
+				el = $(this);
+				title = toc_idx + ". " + el.text();
+
+				// generate span tag and give ID for 'H2' header
+				genId = "toc_id_" + toc_idx;
+				link = "#" + genId;
+				el.attr("id", genId);
+				toc_idx++;
+				// newLine = "<a href='"+link+"'>" + title + "</a><br/>";
+				newLine = "<a href='javascript:void(0);' onclick='scrollToC(\"" + genId + "\");'>" + title + "</a><br/>";
+				ToC+=newLine;
+			});
+			ToC+="</div>";
+			$("#tocLayer").append(ToC);
+		}
+		function scrollToTop() {
+			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+  			return false;
+		}
 		function contentsAdLocate() {
 			/* 본문 광고 삽입 */
 			var midAd = document.getElementsByClassName("mid-ad");
@@ -1028,10 +1063,11 @@ if(!f_enableTedition && url[1] == '') {
 			/* code to run when the document is ready */
 			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
 			cleanupForMobile();
+			generateToC();
 			adLocate();
 			contentsAdLocate();
 			mappingLoginBtn();
-
+			
 			/* [광고] Google AdSense Script 비동기 로드 */
 			var adNum = document.getElementsByClassName("adsbygoogle");
 			if (adNum && adNum.length > 0) {
@@ -1042,10 +1078,6 @@ if(!f_enableTedition && url[1] == '') {
 			window.onresize = function() { adLocate() };
 		}
 		$(document).ready(onReadyFn);
-		function scrollToTop() {
-			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
-  			return false;
-		}
 	</script>
 	<!--F FastBoot_Plugins -->
 	<script>
