@@ -98,7 +98,7 @@ if(!f_enableTedition && url[1] == '') {
 	<div class="container">
 	  <div class="navbar-header">
 	  	<!--F 모바일 제목 -->
-	    <div class="visible-xs" style="overflow:hidden; height:50px; line-height:2.5em; font-size: 1.4em; font-weight: bold; text-align: center; color: #fff;">[##_title_##]</div>
+	    <div class="visible-xs" style="overflow:hidden; height:50px; line-height:2.5em; font-size: 1.4em; font-weight: bold; text-align: center; color: #fff;"><a style="color:#fff; hover:#fff;" href="/">[##_title_##]</a></div>
 		<a id="blog_title" class="navbar-brand dropdown-toggle hidden-xs" data-toggle="dropdown" href="/">[##_title_##]</a>
 	  </div>
 	  <div class="collapse navbar-collapse">
@@ -134,24 +134,6 @@ if(!f_enableTedition && url[1] == '') {
 	</div>
 </div>
 <div class="container">
-	<!-- Table of Contents javascript load -->
-	<!--<script src="./images/jquery-1.8.3.min.js"></script>-->
-	<!--<script src="./images/jquery-ui-1.9.1.custom.min.js"></script>
-	<script src="./images/jquery.tocify.js"></script>
-	<script>
-		if(!rssLogFlag) {
-			if(window.getWindowCleintWidth()>=768){
-				$(function() {
-					var toc = $("#toc").tocify({
-						selectors: "h2,h3,h4"
-					}).data("toc-tocify");
-					// Writes all of the current plugin options to the console
-					//console.log(toc.options);
-				});
-			}
-		}
-	</script>-->
-
 	<div id="adpos-contents-mid" style="display:none;">
 		<script>
 			if(!rssLogFlag && window.getWindowCleintWidth()>=768) {
