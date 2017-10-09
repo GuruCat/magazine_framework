@@ -855,14 +855,33 @@ div.another_category table td{
 }
 .article h2 {
   font-size: 22px;
+  padding-left: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
 }
-.article h2:target {
-  animation: highlight 1s ease;
+.blink {
+  color: white !important;
+  background: #FDEB82 !important;
 }
-@keyframes highlight {
+/* .article h2 {
+  -webkit-animation: yellow-fade 1s ease-in-out 0s;
+  -moz-animation: yellow-fade 1s ease-in-out 0s;
+  -o-animation: yellow-fade 1s ease-in-out 0s;
+  animation: yellow-fade 1s ease-in-out 0s;
+}
+@-moz-keyframes yellow-fade {
   from { background: #FDEB82; }
   to { background: white; }
 }
+@-webkit-keyframes yellow-fade {
+  from { background: #FDEB82; }
+  to { background: white; }
+}
+@keyframes yellow-fade {
+  from { background: #FDEB82; }
+  to { background: white; }
+} */
 .article h3 { font-size: 20px; }
 .article h4 { font-size: 18px; }
 .article h5 { font-size: 16px; }

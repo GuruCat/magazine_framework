@@ -19,6 +19,18 @@
 <title>[##_page_title_##] :: [##_title_##]</title>
 <!--F IE Old Version Compatible -->
 <script>var ielt9 = 0;</script>
+<!-- IE compatibility -->
+<script>
+// Create Element.remove() function if not exist
+if (!('remove' in Element.prototype)) {
+	console.log("IE? -- remove defined now");
+	Element.prototype.remove = function() {
+		if (this.parentNode) {
+			this.parentNode.removeChild(this);
+		}
+	};
+}
+</script>
 <script>
 /* ----------------- FastBoot Setting Variables ---------------*/
 /* 
@@ -49,6 +61,9 @@ if(!f_enableTedition && url[1] == '') {
 }
 </script>
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- implemented for customization -->
+<script src="./images/qua.js"></script>
 
 <!-- highlight.js의 core파일 불러오기, https://highlightjs.org/ -->
 <script src="./images/highlight.pack.js"></script>
@@ -144,13 +159,13 @@ if(!f_enableTedition && url[1] == '') {
 	<!-- [Advertisement] adpos-hidden : layers for hiding Ads -->
 	<div id="adpos-hidden" style="display:none;"></div>
 	<!-- [Advertisement] admos-vertical : Layers for showing vertical-type Ads if resolution which is above 1550 px  -->
-	<div id="adpos-vertical" style="float:left;height:auto;margin-left:-200px;border:1px solid black;">
+	<!-- <div id="adpos-vertical" style="float:left;height:auto;margin-left:-200px;border:1px solid black;">
 		<script>
 			if(window.getWindowCleintWidth()>=768) {
 				document.write('<ins id="movead-vertical-1550" class="adsbygoogle" style="display:inline-block;width:160px;height:600px;margin:auto;" data-ad-client="ca-pub-5538676763841252" data-ad-slot="1206019321"></ins>');
 			}
 		</script>
-	</div>
+	</div> -->
 	<div class="row">
 		<div id="coverDiv"><div class="info col-md-12 hidden"><h3>[##_title_##]</h3><p class="text-muted">[##_desc_##]</p></div><div class="loading"></div></div>
 		<div id="leftContent" class="col-md-9">
@@ -474,8 +489,8 @@ if(!f_enableTedition && url[1] == '') {
 			<s_article_rep>
 				<article>
 				<h3 class="title">
-				<i class="fa fa-bars"></i> <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h3>
-				<div class="author"><span class="text">Posted by</span> [##_article_rep_author_##]</div>
+				<i class="fa fa-pencil-square-o"></i> <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h3>
+				<div class="author"><span class="text">by</span> [##_article_rep_author_##]</div>
 				<div class="article-attr-wrap">
 					<!--F 포스트관리(관리자에게만 보이는 메뉴) -->
 					<s_ad_div>
@@ -497,9 +512,8 @@ if(!f_enableTedition && url[1] == '') {
 				</div>
 				<!-- Table of Contents should be placed here -->
 				<div id="tocLayer"></div>
-				
 				<!--F 포스트 본문 내용 -->
-				<div class="article">
+				<div class="article" id="postingLayer">
 					<!-- [광고] Google AdSense 본문상단,desktop -->
 					<div style="text-align:center;margin:10px 0px 0px 5px;">
 						<script>
@@ -728,7 +742,7 @@ if(!f_enableTedition && url[1] == '') {
 			<s_sidebar>
 				<s_sidebar_element>
 				<!-- 블로그 설명 모듈 -->
-				<div class="panel panel-default" id="side-writer">
+				<div class="panel panel-default hidden-xs hidden-sm">
 					<h4 class="panel-heading"><i class="fa fa-pencil"></i> Writer</h4>
 					<div class="panel-body" id="blogDesc">
 						<img class="pull-left" src="[##_image_##]" alt="블로그 이미지" />
@@ -761,7 +775,7 @@ if(!f_enableTedition && url[1] == '') {
 				</s_sidebar_element>
 				<s_sidebar_element>
 				<!-- 최근 포스트 모듈 -->
-				<div id="recentPost" class="panel panel-default">
+				<div id="recentPost" class="panel panel-default hidden-xs hidden-sm">
 					<h4 class="panel-heading"><a href="/category"><i class="fa fa-file-o"></i> Writings</a></h4>
 					<ul class="list-group list-group-flush">
 						<s_rctps_rep>
@@ -790,7 +804,7 @@ if(!f_enableTedition && url[1] == '') {
 				</s_sidebar_element>
 				<s_sidebar_element>
 				<!-- 태그목록 모듈 -->
-				<div class="panel panel-default" id="side-taglist">
+				<div class="panel panel-default hidden-xs hidden-sm">
 					<h4 class="panel-heading"><a href="/tag"><i class="fa fa-tags"></i> Tags</a></h4>
 					<div id="side-tags" class="panel-body">
 						<s_random_tags>
@@ -838,7 +852,7 @@ if(!f_enableTedition && url[1] == '') {
 				</s_sidebar_element>
 				<s_sidebar_element>
 				<!-- 글 보관함 모듈 -->
-				<div class="panel panel-default" id="side-archive">
+				<div class="panel panel-default hidden-xs hidden-sm">
 					<h4 class="panel-heading"><i class="fa fa-folder"></i> Archive</h4>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item archive">
@@ -932,14 +946,14 @@ if(!f_enableTedition && url[1] == '') {
 					<p class="text-muted">Hosted by <a href="http://daum.net" onclick="window.open(this.href); return false" title="Daum 바로가기">Daum</a> · Powered by <a href="http://www.tistory.com" title="Tistory 바로가기">Tistory</a><br/>Skin by <a href="http://readiz.com">Readiz</a> · Based on Bootstrap<br/>Blog Author: <a href="http://gurucat.net">[##_blogger_##]</a></p>
 					</div>
       			</div>
-        		<div id="skinInfo" class="col-md-4 media"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
+        		<div id="skinInfo" class="col-md-4 media hidden-xs hidden-sm"><div class="pull-left"><i class="fa fa-file-o fa-2x fa-fw"></i></div>
 					<div class="media-body">
 					<h3>Skin Info</h3>
 					<p class="text-muted">"FastBoot 1.6.2" Designed by <a href="http://readiz.com" target="_blank">Readiz</a><br/>Inspired by <a href="http://yongzz.com" target="_blank">yongzz</a>, <a href="http://wincomi.com" target="_blank">wincomi</a>, <a href="http://markquery.com" target="_blank">Ungki. H</a><br/><a href="http://blog.readiz.com/22">Further Information</a>
 					</p>
 					</div>
 				</div>
-        		<div id="tistoryLink" class="col-md-4 media"><div class="pull-left"><i class="fa fa-link fa-2x fa-fw"></i></div>
+        		<div id="tistoryLink" class="col-md-4 media hidden-xs hidden-sm"><div class="pull-left"><i class="fa fa-link fa-2x fa-fw"></i></div>
 					<div class="media-body"><h3>Tistory links</h3>
 						<p class="text-muted">
 							<!--F 블로그 사용 환경 (설치형/티스토리)에 맞게 아래 주석으로 처리된 메뉴를 활성화 시키시기 바랍니다. -->
@@ -967,116 +981,7 @@ if(!f_enableTedition && url[1] == '') {
 	else if(ielt9 == 0) window.jQuery || document.write('<script src="./images/jquery-2.1.0.min.js"><\/script>');</script>
 	<!--F Document Ready -->
 	<script>
-		function scrollToC(idToc) {
-			console.log("idToc : " + idToc);
-			var elem = $("#" + idToc);
-			if (elem) {
-				var offset = elem.offset();
-				console.log("offset : " + offset.top)
-				$('html, body').animate({scrollTop : offset.top - 150}, 400);
-			}
-		}
-		function generateToC() {
-			var ToC = "<div class='table-of-contents'><h2>Contents:</h2>";
-			var newLine, el, title, link;
-			var toc_idx=1;
-			var genId;
-			$(".article h2").each(function() {
-				// loop
-				el = $(this);
-				title = toc_idx + ". " + el.text();
-
-				// generate span tag and give ID for 'H2' header
-				genId = "toc_id_" + toc_idx;
-				link = "#" + genId;
-				el.attr("id", genId);
-				toc_idx++;
-				// newLine = "<a href='"+link+"'>" + title + "</a><br/>";
-				newLine = "<a href='javascript:void(0);' onclick='scrollToC(\"" + genId + "\");'>" + title + "</a><br/>";
-				ToC+=newLine;
-			});
-			ToC+="</div>";
-			$("#tocLayer").append(ToC);
-		}
-		function scrollToTop() {
-			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
-  			return false;
-		}
-		function contentsAdLocate() {
-			/* 본문 광고 삽입 */
-			var midAd = document.getElementsByClassName("mid-ad");
-			var midAdContents = document.getElementById("adpos-contents-mid");
-			if(midAdContents) {
-				if (midAd){
-					for(i=0;i<midAd.length;i++){
-						midAd[i].innerHTML = midAdContents.innerHTML;
-						midAd[i].setAttribute("style", "width:100%;text-align:center;");
-						//midAdContents.getAttribute("style")
-					}
-					//document.write('<div class="clearfix"></div>');
-				}
-				midAdContents.remove();
-			}
-		}
-		var mode = 1;
-		function adLocate() {
-			/* [Advertisement] 해상도 변화에 따라 좌측 세로형 광고를 보여주거나 사라지게 함 */
-			if (window.getWindowCleintWidth() >= 1550) {
-				old_mode = mode; mode = 1;
-				if (old_mode != mode) {
-					$("#adpos-vertical").append($("#movead-vertical-1550"));
-				}
-			} else {
-				old_mode = mode; mode = 0;
-				if (old_mode != mode) {
-					$("#adpos-hidden").append($("#movead-vertical-1550"));
-				}				
-			}
-		}
-		/* Login Button Mapping */
-		function mappingLoginBtn() {
-			var tmpLogin = document.getElementsByClassName("tt_menubar_logout")[0].getElementsByTagName("a")[0];
-			tmpLogin.className = "";
-			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그아웃",'<i class="fa fa-unlock fa-fw"></i> Logout');
-			tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그인",'<i class="fa fa-lock fa-fw"></i> Login');
-			document.getElementById("loginout_append").innerHTML = tmpLogin.outerHTML; 
-		}
-		function cleanupForMobile() {
-			if (window.getWindowCleintWidth()<768) {
-				/* Remove some side-bar module for clean mobile view */
-				var mod_writer = document.getElementById("side-writer");
-				var mod_tags = document.getElementById("side-taglist");
-				var mod_archive = document.getElementById("side-archive");
-
-				if (mod_writer)	mod_writer.remove();
-				if (mod_tags) mod_tags.remove();
-				if (mod_archive) mod_archive.remove();
-
-				/* Remove some footer divisions for clean mobile view */
-				var footer_lnk = document.getElementById("tistoryLink");
-				var footer_sknfo = document.getElementById("skinInfo");
-				if (footer_lnk) footer_lnk.remove();
-				if (footer_sknfo) footer_sknfo.remove();
-			}
-		}
-		function onReadyFn (jQuery) {
-			/* code to run when the document is ready */
-			/* It will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. */
-			cleanupForMobile();
-			generateToC();
-			adLocate();
-			contentsAdLocate();
-			mappingLoginBtn();
-			
-			/* [광고] Google AdSense Script 비동기 로드 */
-			var adNum = document.getElementsByClassName("adsbygoogle");
-			if (adNum && adNum.length > 0) {
-				for (var i=0;i<adNum.length;++i)
-					(adsbygoogle = window.adsbygoogle || []).push({});
-			}
-			/* adLocate() function would be called when window-resize event */
-			window.onresize = function() { adLocate() };
-		}
+		// refer to customization js
 		$(document).ready(onReadyFn);
 	</script>
 	<!--F FastBoot_Plugins -->
