@@ -32,64 +32,63 @@ function scrollToC(idToc) {
     }
 }
 
-//Generate Table of Contents through Advacned way
-function generateAdvToC(toc) {
-    if(toc){
-        var i2 = 0, i3 = 0, i4 = 0;
-        toc = toc.appendChild(document.createElement("ul"));
-        for (var i = 0; i < document.body.childNodes.length; ++i) {
-            var node = document.body.childNodes[i];
-            var tagName = node.nodeName.toLowerCase();
+function createLinkOnClick(href, onclick, textContent) {
+	var a = document.createElement("a");
+    a.setAttribute("href", href);
+    a.setAttribute("onclick", onclick);
+    a.textContent = textContent;
+    a.innerHTML = a.innerHTML + "<br>";
+	return a;
+}
+//Generate Table of Contents
+function generateToC() {
+    var tocLayer = document.getElementById("tocLayer");
+    var postingLayer = document.getElementById("postingLayer");
+    var i2 = 0, i3 = 0, i4 = 0;
+    if (tocLayer != null && postingLayer != null) {
+        $(".article h2, .article h3, .article h4").each(function() {
+            el = $(this);
+            var node = el.get(0);
+            var tagName = el.prop("tagName");
+            tagName = tagName.toLowerCase();
             if (tagName == "h4") {
-                ++i4;
-                if (i4 == 1) toc.lastChild.lastChild.lastChild.appendChild(document.createElement("ul"));
-                var section = i2 + "." + i3 + "." + i4;
-                node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
-                node.id = "section" + section;
-                toc.lastChild.lastChild.lastChild.lastChild.appendChild(document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+                if(i3!=0) {
+                    ++i4;
+                    var section = i2 + "_" + i3 + "_" + i4;
+                    var link = createLinkOnClick("javascript:void(0);", "scrollToC(\"section" + section + "\");", section.replace(/_/g, ".")+". "+node.textContent);
+                    link.className = "toc_lv3";
+                    tocLayer.appendChild(link);
+                    node.id = "section" + section;
+                }
             }
             else if (tagName == "h3") {
                 ++i3, i4 = 0;
-                if (i3 == 1) toc.lastChild.appendChild(document.createElement("ul"));
-                var section = i2 + "." + i3;
-                node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
+                var section = i2 + "_" + i3;
                 node.id = "section" + section;
-                toc.lastChild.lastChild.appendChild(document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+                var link = createLinkOnClick("javascript:void(0);", "scrollToC(\"section" + section + "\");", section.replace(/_/g, ".") +". "+node.textContent);
+                link.className = "toc_lv2";
+                tocLayer.appendChild(link);
             }
             else if (tagName == "h2") {
                 ++i2, i3 = 0, i4 = 0;
                 var section = i2;
-                node.insertBefore(document.createTextNode(section + ". "), node.firstChild);
+                var link = createLinkOnClick("javascript:void(0);", "scrollToC(\"section" + section + "\");", section+". "+node.textContent);
+                link.className="toc_lv1";
                 node.id = "section" + section;
-                toc.appendChild(h2item = document.createElement("li")).appendChild(createLink("#section" + section, node.innerHTML));
+                tocLayer.appendChild(link);
             }
+        });
+
+        if (i2 != 0 || i3 != 0 || i4 != 0) {
+            var elm = document.createElement("h2");
+            elm.innerHTML = "<i class='fa fa-list-ol' aria-hidden='true'></i> Contents:";
+            tocLayer.insertBefore(elm, tocLayer.firstChild);
+        } else {
+            var elm = document.createElement("h2");
+            elm.innerHTML = "No Contents list here.";
+            tocLayer.insertBefore(elm, tocLayer.firstChild);
         }
     }
-}
-function generateToC() {
-    var ToC = "<div class='table-of-contents'><h2><i class='fa fa-list-ol' aria-hidden='true'></i> Contents:</h2>";
-    var newLine, el, title, link;
-    var toc_idx=1;
-    var genId;
-
-    $(".article h2").each(function() {
-        // loop
-        el = $(this);
- 
-        title = toc_idx + ". " + el.text();
-        
-        // generate span tag and give ID for 'H2' header
-        genId = "toc_id_" + toc_idx;
-        link = "#" + genId;
-        el.attr("id", genId);
-        toc_idx++;
-        // newLine = "<a href='"+link+"'>" + title + "</a><br/>";
-        newLine = "<a href='javascript:void(0);' onclick='scrollToC(\"" + genId + "\");'>" + title + "</a><br/>";
-        ToC+=newLine;
-
-    });
-    ToC+="</div>";
-    $("#tocLayer").append(ToC);
 }
 function contentsAdLocate() {
     /* 본문 광고 삽입 */
