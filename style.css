@@ -4,13 +4,14 @@
 */
 
 /*------------------------------------------------------------------------------------------------------------ Tistory Default */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @charset "utf-8";
 div,dt,ul,ol,li,h1,h2,h3,h5,h6,pre,code,form,fieldset,legend,textarea,blockquote,th,td,input,select,textarea,button,img,dl,li {
   margin:0;
   padding:0;
   border:0;
   line-height:1.5;
-  font-family:Arial, "돋움", Dotum, AppleGothic, sans-serif !important;
+  font-family:"Nanum Gothic", Arial, "돋움", Dotum, AppleGothic, sans-serif !important;
 }
 a {text-decoration:none}
 hr {display:none}
@@ -248,7 +249,7 @@ h3.title {
   background: #8e8e8e;
 }
 
-#sidebar .panel-heading{margin: 0; font-size:16px;padding:5px 10px;font-weight:700;font-family:Arial, "돋움", Dotum, AppleGothic, sans-serif !important;}
+#sidebar .panel-heading{margin: 0; font-size:16px;padding:5px 10px;font-weight:700;font-family:'Nanum Gothic', Arial, "돋움", Dotum, AppleGothic, sans-serif !important;}
 #sidebar .panel-heading a{color:#333}
 #sidebar .panel-heading small{font-size:12px;float:right;margin-top:2px}
 #sidebar .panel-heading small a{color:#999}
