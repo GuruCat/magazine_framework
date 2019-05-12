@@ -121,6 +121,7 @@ var mode = 1;
 // }
 /* Login Button Mapping */
 function mappingLoginBtn() {
+//    var tmpLogin = document.getElementsByClassName("tt_menubar_logout")[0].getElementsByTagName("a")[0];
     var tmpLogin = document.getElementsByClassName("tt_menubar_logout")[0].getElementsByTagName("a")[0];
     tmpLogin.className = "";
     tmpLogin.innerHTML = tmpLogin.innerHTML.replace("로그아웃",'<i class="fa fa-unlock fa-fw"></i> Logout');
@@ -133,7 +134,7 @@ function onReadyFn (jQuery) {
     generateToC();
     // adLocate();
     contentsAdLocate();
-    mappingLoginBtn();
+    //mappingLoginBtn();
     
     /* [광고] Google AdSense Script 비동기 로드 */
     var adNum = document.getElementsByClassName("adsbygoogle");
