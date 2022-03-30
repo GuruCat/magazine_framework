@@ -1210,10 +1210,10 @@
 								<s_if_var_ads-sidebar-use-yn>
 								<div class="sidebarAds sidebarAds10">
 								  <div class="float-sidebar" style="top:0px;">
-  								    <script>
-  								      document.write(getAds(adsJson,"[##_var_ads-sidebar-info10_##]",""));
-  								   </script>
-  								  </div>
+  								  <script>
+  								    document.write(getAds(adsJson,"[##_var_ads-sidebar-info10_##]",""));
+  								  </script>
+  								</div>
 								</div>
 								</s_if_var_ads-sidebar-use-yn>
 							</s_sidebar_element>

@@ -1,55 +1,835 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<skin version="0.1" language="ko">
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
 	<information>
-		<name>FastBoot</name>
-		<version>1.6.2</version>
+		<name>Odyssey for JamesDinDin</name>
+		<version>1.0</version>
 		<description>
-			<![CDATA[ 반응형 2단 스킨입니다. 본문 가변입니다. 스킨위자드미지원. IE 7이상 지원. Bootstrap v3.1 적용. 질문은 제 블로그로 해주세요.
-			]]>
+			<![CDATA[ 오디세이 제임스딘딘 버전 ]]>
 		</description>
 		<license>
-			<![CDATA[제작자 명기 해주세요. by Readiz http://blog.readiz.com]]>
+			<![CDATA[ MIT License ]]>
 		</license>
 	</information>
 	<author>
-		<name>Readiz</name>
-		<homepage>http://readiz.com</homepage>
-		<email>readiz@readiz.com</email>
+		<name>James DinDin</name>
+		<homepage>https://techlog.gurucat.net</homepage>
+		<email>jyh815@gmail.com</email>
 	</author>
 	<default>
-		<recentEntries>15</recentEntries>
-		<recentComments>5</recentComments>
-		<recentTrackbacks>5</recentTrackbacks>
-		<itemsOnGuestbook>10</itemsOnGuestbook>
-		<tagsInCloud>30</tagsInCloud>
+		<recentEntries>3</recentEntries>
+		<recentComments>3</recentComments>
+		<recentTrackbacks>4</recentTrackbacks>
+		<itemsOnGuestbook>4</itemsOnGuestbook>
+		<tagsInCloud>20</tagsInCloud>
 		<sortInCloud>3</sortInCloud>
-		<expandComment>1</expandComment>
-		<expandTrackback>0</expandTrackback>
-		<lengthOfRecentNotice>40</lengthOfRecentNotice>
-		<lengthOfRecentEntry>40</lengthOfRecentEntry>
-		<lengthOfRecentComment>40</lengthOfRecentComment>
-		<lengthOfRecentTrackback>40</lengthOfRecentTrackback>
-		<lengthOfLink>40</lengthOfLink>
-		<showListOnCategory>0</showListOnCategory>
-		<showListOnArchive>0</showListOnArchive>
-		<trackbackMessage>
-			<none>Trackback &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
-			<single>Trackback &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
-		</trackbackMessage>
+		<expandComment>8</expandComment>
+		<lengthOfRecentNotice>50</lengthOfRecentNotice>
+		<lengthOfRecentEntry>70</lengthOfRecentEntry>
+		<lengthOfRecentComment>50</lengthOfRecentComment>
+		<lengthOfLink>30</lengthOfLink>
 		<commentMessage>
-			<none>Comment &lt;span class="cnt"&gt;0&lt;/span&gt;</none>
-			<single>Comment &lt;span class="cnt"&gt;1&lt;/span&gt;</single>
+			<none>0</none>
+			<single>1</single>
 		</commentMessage>
-		<tree>
-			<color>8A8A8A</color>
-			<bgColor></bgColor>
-			<activeColor>8A8A8A</activeColor>
-			<activeBgColor></activeBgColor>
-			<labelLength>20</labelLength>
-			<showValue>1</showValue>
-		</tree>
-		<contentWidth>1000</contentWidth>
-		<toolbar>white</toolbar>
-		<layout>2</layout>
+		<contentWidth>700</contentWidth>
+		<entriesOnPage>10</entriesOnPage>
+		<entriesOnList>10</entriesOnList>
+		<showListOnCategory>2</showListOnCategory>
+		<showListOnHome>2</showListOnHome>
+		<showListLock>1</showListLock>
+		<liststyle>thumbnail</liststyle>
 	</default>
+	<liststyle>
+		<item>
+			<label>베이직 타입</label>
+			<value>thumbnail</value>
+		</item>
+		<item>
+			<label>이미지 크기 고정 타입</label>
+			<value>crop</value>
+		</item>
+		<item>
+			<label>이미지 비율 유지 타입</label>
+			<value>resize</value>
+		</item>
+		<item>
+			<label>포스터 타입</label>
+			<value>poster</value>
+		</item>
+	</liststyle>
+	<variables>
+		<variablegroup name="타이틀 헤더">
+			<variable>
+				<name>logoImage</name>
+				<label>로고 (높이 18px)</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="PC 레이아웃">
+			<variable>
+				<name>sidebartype</name>
+				<label>사이드바 형태</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"right", "label":"2단 우측 사이드바", "value":"right"},
+						{"name":"drawer", "label":"1단 서랍 사이드바", "value":"drawer"}
+					]
+				]]>
+				</option>
+				<default>right</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="목록 탐색 방법">
+			<variable>
+				<name>listmore</name>
+				<label>PC 목록 탐색</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"listmorenumber", "label":"페이지 나열", "value":"listmorenumber"},
+						{"name":"listmorebutton", "label":"더보기 버튼", "value":"listmorebutton"}
+					]
+				]]>
+				</option>
+				<default>listmorenumber</default>
+			</variable>
+			<variable>
+				<name>listmoremobile</name>
+				<label>모바일 목록 탐색</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"listmorenumbermobile", "label":"페이지 나열", "value":"listmorenumbermobile"},
+						{"name":"listmorebuttonmobile", "label":"더보기 버튼", "value":"listmorebuttonmobile"}
+					]
+				]]>
+				</option>
+				<default>listmorebuttonmobile</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="내비게이션">
+			<variable>
+				<name>topnav</name>
+				<label>내비게이션</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"topnavnone", "label":"사용 안 함", "value":"topnavnone"},
+						{"name":"topnavmenu", "label":"티스토리 '메뉴' 활용", "value":"topnavmenu"}
+					]
+				]]>
+				</option>
+				<default>topnavnone</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="슬로건 섹션">
+			<variable>
+				<name>headersloguntitle</name>
+				<label>슬로건 타이틀</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headersloguntext</name>
+				<label>슬로건 상세문구</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerslogundisplay</name>
+				<label>슬로건 섹션 보여줄 곳</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"headerslogundisplayon", "label":"홈에서만 노출", "value":"headerslogundisplayon"},
+						{"name":"headerslogundisplayoff", "label":"홈과 목록에서 함께 노출", "value":"headerslogundisplayoff"}
+					]
+				]]>
+				</option>
+				<default>headerslogundisplayon</default>
+			</variable>
+			<variable>
+				<name>headerslogunmobile</name>
+				<label>슬로건 섹션 모바일 적용</label>
+				<description></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="배너 섹션">
+			<variable>
+				<name>headerbannerimage</name>
+				<label>이미지</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannertitle</name>
+				<label>문구</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannertitlecolor</name>
+				<label>문구 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerlink</name>
+				<label>자세히보기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>headerbannerlinkcolor</name>
+				<label>자세히보기 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerlinkovercolor</name>
+				<label>자세히보기 커서 반응 색상</label>
+				<description></description>
+				<type>COLOR</type>
+				<option></option>
+				<default>#ffffff</default>
+			</variable>
+			<variable>
+				<name>headerbannerdisplay</name>
+				<label>배너 섹션 보여줄 곳</label>
+				<description></description>
+				<type>SELECT</type>
+				<option>
+					<![CDATA[
+					[
+						{"name":"headerbannerdisplayon", "label":"홈에서만 노출", "value":"headerbannerdisplayon"},
+						{"name":"headerbannerdisplayoff", "label":"홈과 목록에서 함께 노출", "value":"headerbannerdisplayoff"}
+					]
+				]]>
+				</option>
+				<default>headerbannerdisplayon</default>
+			</variable>
+			<variable>
+				<name>bannermobile</name>
+				<label>배너 섹션 모바일 적용</label>
+				<description></description>
+				<type>BOOL</type>
+				<option></option>
+				<default>false</default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="사이드바 - 프로필">
+			<variable>
+				<name>Profilebgimage</name>
+				<label>프로필 배경 이미지</label>
+				<description></description>
+				<type>IMAGE</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profilefacebooklink</name>
+				<label>페이스북 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profileyoutubelink</name>
+				<label>유튜브 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profileinstalink</name>
+				<label>인스타그램 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>Profiletwitterlink</name>
+				<label>트위터 바로가기 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+
+		<variablegroup name="사이드바 - SNS">
+			<variable>
+				<name>facebookurl</name>
+				<label>페이스북 페이지 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>twitterurl</name>
+				<label>트위터 타임라인 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+
+		<variablegroup name="푸터">
+			<variable>
+				<name>footerLink1Name</name>
+				<label>외부링크1 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink1Url</name>
+				<label>외부링크1 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink2Name</name>
+				<label>외부링크2 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink2Url</name>
+				<label>외부링크2 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink3Name</name>
+				<label>외부링크3 이름</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerLink3Url</name>
+				<label>외부링크3 URL</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+			<variable>
+				<name>footerCopyright</name>
+				<label>푸터 문구1</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default>Copyright © Kakao Corp. All rights reserved.</default>
+			</variable>
+			<variable>
+				<name>footerAddress</name>
+				<label>푸터 문구2</label>
+				<description></description>
+				<type>STRING</type>
+				<option></option>
+				<default></default>
+			</variable>
+		</variablegroup>
+		
+		<variablegroup name="광고">
+	  		<variable>
+				<name>adsense-use-yn</name>
+				<label><![CDATA[구글 애드센스 사용 ]]></label>
+				<description><![CDATA[애드센스 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>adsense-data-ad-client</name>
+				<label><![CDATA[▶광고 ID(data-ad-client) ]]></label>
+				<description><![CDATA[애드센스 data-ad-client 값을 입력해주세요.]]></description>
+				<type>STRING</type>
+				<option />
+				<default></default>
+			</variable>
+
+	  		<variable>
+				<name>adfit-use-yn</name>
+				<label><![CDATA[다음(카카오) 애드핏 사용 ]]></label>
+				<description><![CDATA[애드핏 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			
+			<variable>
+				<name>ads-content-in-auto-use-yn</name>
+				<label><![CDATA[ 콘텐츠 내 자동 삽입 광고 ]]></label>
+				<description><![CDATA[콘텐츠 내 자동 삽입 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-content-in-auto-info</name>
+				<label><![CDATA[ ▶광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID] 형식으로 값을 입력하세요]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250][애드센스,광고ID]</default>
+			</variable>
+			<variable>
+				<name>ads-content-in-auto-start</name>
+				<label><![CDATA[ ▶시작단락]]></label>
+				<description><![CDATA[[시작할 단락 시작 위치 입력, 권장단락 숫자2]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>2</default>
+			</variable>
+			<variable>
+				<name>ads-content-in-auto-loop</name>
+				<label><![CDATA[ ▶광고 반복 단락]]></label>
+				<description><![CDATA[[10인 경우 시작단락에서 10단락마다 광고 삽입]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>10</default>
+			</variable>
+	  		<variable>
+				<name>ads-content-top-use-yn</name>
+				<label><![CDATA[ 본문 상단 광고 사용 ]]></label>
+				<description><![CDATA[광고 본문 상단 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-content-top-info</name>
+				<label><![CDATA[ ▶공통 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250][애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-content-top-pc-info</name>
+				<label><![CDATA[ ▶데스크탑용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-content-top-mobile-info</name>
+				<label><![CDATA[ ▶모바일용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+			
+			<variable>
+				<name>ads-content-right-use-yn</name>
+				<label><![CDATA[ 본문 왼쪽/오른쪽 광고 사용 ]]></label>
+				<description><![CDATA[ 본문 오른쪽 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-content-right-info</name>
+				<label><![CDATA[ ▶광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-content-right-pos</name>
+				<label><![CDATA[ ▶왼쪽/오른쪽 ]]></label>
+				<description><![CDATA[본문 위치를 선택해주세요.]]></description>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"right","label":"오른쪽","value":"right"}, {"name":"left","label":"왼쪽","value":"left"}]]]></option>
+				<default>right</default>
+			</variable>
+			
+	  		<variable>
+				<name>ads-content-bottom-use-yn</name>
+				<label><![CDATA[ 본문 하단 광고 사용 ]]></label>
+				<description><![CDATA[광고 본문 하단 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-content-bottom-info</name>
+				<label><![CDATA[ ▶공통 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250][애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-content-bottom-pc-info</name>
+				<label><![CDATA[ ▶데스크탑용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-content-bottom-mobile-info</name>
+				<label><![CDATA[ ▶모바일용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+			
+			<variable>
+				<name>ads-recent-category-use-yn</name>
+				<label><![CDATA[ 카테고리글 더보기 광고 사용 ]]></label>
+				<description><![CDATA[ 최근 카테고리 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-recent-category-info</name>
+				<label><![CDATA[ ▶광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-recent-category-pos</name>
+				<label><![CDATA[ ▶왼쪽/오른쪽 ]]></label>
+				<description><![CDATA[본문 위치를 선택해주세요.]]></description>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"right","label":"오른쪽","value":"right"}, {"name":"left","label":"왼쪽","value":"left"}]]]></option>
+				<default>left</default>
+			</variable>
+			<variable>
+				<name>ads-recent-category-size</name>
+				<label><![CDATA[ ▶광고사이즈 ]]></label>
+				<description><![CDATA[광고 사이즈를 선택해주세요.]]></description>
+				<type>SELECT</type>
+				<option><![CDATA[[{"name":"width:300px;height:250px;","label":"300x250","value":"width:300px;height:250px;"}, {"name":"width:250px;height:250px;","label":"250x250","value":"width:250px;height:250px;"}, {"name":"width:200px;height:2000px;","label":"200x200(애드센스 전용)","value":"width:200px;height:200px;"}, {"name":"width:336px;height:280px;","label":"336x280(애드센스 전용)","value":"width:336px;height:280px;"}]]]></option>
+				<default>width:300px;height:250px;</default>
+			</variable>
+			
+			<variable>
+				<name>ads-matching-use-yn</name>
+				<label><![CDATA[ 관련글 광고 사용 ]]></label>
+				<description><![CDATA[ 관련글 하단 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-matching-info</name>
+				<label><![CDATA[ ▶광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID]</default>
+			</variable>
+			<variable>
+				<name>ads-matching-type</name>
+				<label><![CDATA[ ▶일치하는 컨텐츠 광고 ]]></label>
+				<description><![CDATA[본문 위치를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>true</default>
+			</variable>
+			
+	  		<variable>
+				<name>ads-category-top-use-yn</name>
+				<label><![CDATA[ 카테고리 상단 광고 사용 ]]></label>
+				<description><![CDATA[광고 카테고리 상단 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-category-top-info</name>
+				<label><![CDATA[ ▶공통 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250][애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-category-top-pc-info</name>
+				<label><![CDATA[ ▶데스크탑용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-category-top-mobile-info</name>
+				<label><![CDATA[ ▶모바일용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+	  		<variable>
+				<name>ads-category-bottom-use-yn</name>
+				<label><![CDATA[ 카테고리 하단 광고 사용 ]]></label>
+				<description><![CDATA[광고 카테고리 하단 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-category-bottom-info</name>
+				<label><![CDATA[ ▶공통 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250][애드핏,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-category-bottom-pc-info</name>
+				<label><![CDATA[ ▶데스크탑용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,250,250]</default>
+			</variable>
+			<variable>
+				<name>ads-category-bottom-mobile-info</name>
+				<label><![CDATA[ ▶모바일용 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,250,250]</default>
+			</variable>
+			
+			<variable>
+				<name>ads-sidebar-use-yn</name>
+				<label><![CDATA[ 사이드바 광고 사용 ]]></label>
+				<description><![CDATA[광고 사이드바 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>adfit-use_id</name>
+				<label><![CDATA[ ▶애드핏 승인용 광고단위ID(160x600) ]]></label>
+				<description><![CDATA[[애드핏 승인용 광고단위ID(160x600)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>DAN-xxxxxxxxx</default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info1</name>
+				<label><![CDATA[ ▶사이드바 1번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,광고ID,300,600]</default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info2</name>
+				<label><![CDATA[ ▶사이드바 2번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드핏,광고ID,160,600]</default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info3</name>
+				<label><![CDATA[ ▶사이드바 3번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info4</name>
+				<label><![CDATA[ ▶사이드바 4번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info5</name>
+				<label><![CDATA[ ▶사이드바 5번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info6</name>
+				<label><![CDATA[ ▶사이드바 6번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info7</name>
+				<label><![CDATA[ ▶사이드바 7번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info8</name>
+				<label><![CDATA[ ▶사이드바 8번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info9</name>
+				<label><![CDATA[ ▶사이드바 9번 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-sidebar-info10</name>
+				<label><![CDATA[ ▶사이드바 10번 광고정보(따라다님) ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default></default>
+			</variable>
+			<variable>
+				<name>ads-flutter-footer-use-yn</name>
+				<label><![CDATA[ 플러터 푸터 광고 사용 ]]></label>
+				<description><![CDATA[플러터 푸터 광고 사용여부를 선택해주세요.]]></description>
+				<type>BOOL</type>
+				<option/>
+				<default>false</default>
+			</variable>
+			<variable>
+				<name>ads-flutter-footer-info</name>
+				<label><![CDATA[ ▶플러터 푸터 광고정보 ]]></label>
+				<description><![CDATA[[광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+				<type>STRING</type>
+				<option/>
+				<default>[애드센스,123456,728,100]</default>
+			</variable>
+		</variablegroup>
+	</variables>
+	<cover>
+		<item>
+			<name>cover-ads</name>
+			<label><![CDATA[광고 커버]]></label>
+			<description><![CDATA[타이틀에 [광고구분(애드센스/애드핏),광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+		</item>
+		<item>
+			<name>cover-matching-ads</name>
+			<label><![CDATA[일치하는 컨텐츠 광고 커버(애드센스)]]></label>
+			<description><![CDATA[타이틀에 [애드센스,광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
+		</item>
+		<item>
+			<name>thumbnail</name>
+			<label>
+				<![CDATA[ 베이직 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 제목과 본문, 그리고 우측의 대표 이미지로 글 정보를 구성합니다.
+				'콘텐츠-최신 글' 사용시, more 버튼으로 글 목록 이동이 가능합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>crop</name>
+			<label>
+				<![CDATA[ 이미지 크기 고정 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지를 일정 크기로 크롭하고, 제목과 본문으로 글 정보를 구성합니다.
+				4개 이상의 글을 포함할 경우엔 '더보기' 버튼이 나타납니다.]]>
+			</description>
+		</item>
+		<item>
+			<name>resize</name>
+			<label>
+				<![CDATA[ 이미지 비율 유지 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지의 비율을 유지하고, 제목과 본문으로 글 정보를 구성합니다.
+				4개 이상의 글을 포함할 경우엔 '더보기' 버튼이 나타납니다.]]>
+			</description>
+		</item>
+		<item>
+			<name>poster</name>
+			<label>
+				<![CDATA[ 포스터 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 세로 포스텨 형태로 글 정보를 구성합니다.
+				'콘텐츠-최신 글' 사용시, more 버튼으로 글 목록 이동이 가능합니다. ]]>
+			</description>
+		</item>
+		<item>
+			<name>text</name>
+			<label>
+				<![CDATA[ 단순 텍스트 타입 ]]>
+			</label>
+			<description>
+				<![CDATA[ 이미지와 본문 없이, 단순히 제목만으로 글 정보를 구성합니다. ]]>
+			</description>
+		</item>
+	</cover>
 </skin>

@@ -488,10 +488,6 @@ html {
     }
 }
 
-#tt-body-page .area-paging-more {
-    display: none;
-}
-
 #tt-body-page .area-aside{
 	margin-top:0px;
 }
@@ -509,43 +505,6 @@ html {
 .another_category {
     margin-bottom: 56px !important;
 }
-/* Overwrite */
-.article-view .another_category {
-	/*margin: 60px 0 57px !important;*/
-	/*padding: 16px 20px 14px;*/
-}
-.article-view .another_category h4 {
-	margin: 0 0 13px !important;;
-	padding: 0 !important;
-	border-bottom: 0px !important;
-	font-size: 0.875em !important;
-}
-.article-view .another_category table {
-	margin: 0 !important;
-	border: 0px;
-}
-.article-view .another_category th {
-	padding: 2px 0 !important;
-	font-size: 0.875rem !important;
-}
-.article-view .another_category th a.current {
-	text-decoration: underline !important;
-	font-weight: 400;
-	color: #333 !important;
-	border: 0px !important;
-}
-.article-view .another_category tr,
-.article-view .another_category tr th {
-	border: 0px;
-}
-.article-view .another_category td {
-	padding: 2px 0 !important;
-	border: 0px;
-	font-size: 0.75rem !important;
-}
-
-.article-view .another_category a {display:contents;}
-
 
 /* area_paging */
 /* media query - pc 페이징 스타일 제어 */
@@ -1540,7 +1499,7 @@ html {
 
 .area-aside .box-profile .text-profile {
     max-width: 210px;
-    margin: 450px auto 36px auto;
+    margin: 300px auto 36px auto;
     font-size: 14px;
     line-height: 1.54;
     color: #777;
@@ -3849,9 +3808,9 @@ html {
     max-width: 100%;
 }
 
-/*.another_category {
+.another_category {
     display: none;
-}*/
+}
 
 /* area_view - 유튜브 사이즈 제어 */
 @media screen and (max-width: 743px) {
@@ -4281,29 +4240,7 @@ html {
 		#tt-body-guestbook .wrap-drawer .main{
 			padding-top: 0;
 		}
-
-    #tt-body-tag .area-paging,
-    #tt-body-media .area-paging,
-    #tt-body-search .area-paging,
-    #tt-body-location .area-paging,
-    #tt-body-guestbook .area-paging,
-    #tt-body-archive .area-paging {
-        display: none;
-    }
 }
-
-/* ----- media query - tablet ----- */
-@media screen and (max-width: 1060px) {
-    #tt-body-tag .area-paging,
-    #tt-body-media .area-paging,
-    #tt-body-search .area-paging,
-    #tt-body-location .area-paging,
-    #tt-body-guestbook .area-paging,
-    #tt-body-archive .area-paging {
-        display: none;
-    }
-}
-
 
 
 /* ----- media query - tablet ----- */
@@ -4633,36 +4570,6 @@ html {
 
 #tt-body-guestbook .area-reply .list-reply + form{
     padding-top:0;
-}
-
-.ads-flutter-footer{
-	clear:both;
-  text-align:center;
-  margin:0;
-  width:100%;
-  overflow:hidden;
-  position:fixed;
-  left:0;
-  bottom:0;
-  z-index:99999;
-  background-color:hsla(0,0%,100%,.8);
-  border-top:2px solid hsla(0,0%,88.2%,.8);
-}
-
-.ads-flutter-footer-close{
-	cursor: pointer;
-	color:#b2b2b2;
-	border:1px solid #b2b2b2;
-	border-radius:20px;
-	background:#fff;
-	line-height:20px;
-	display:inline-block;
-	font-size:20px;
-	font-family:arial, sans-serit;
-	padding:0 5px;
-	position:absolute;
-	top:10px;
-	right:10px;
 }
 
 .revenue_unit_wrap.position_list{
