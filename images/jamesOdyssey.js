@@ -7,6 +7,7 @@
 	              2 - 컨텐츠 내 자동삽입 광고
 	              3 - 플러터 푸터 광고
 				  4 - 커버 베이직타입 맞춤광고
+				  5 - 반응형 자동광고
 	  */
 	  /*
 	    adsJson.adsence
@@ -85,7 +86,11 @@
 		strScript += ' data-ad-client="'+adsJson.dataAdClientId+'"';
 		strScript += ' data-ad-slot="'+adsInfo[i][1]+'"';
 		strScript += '></ins>';
-		strScript += '<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>';
+	  } else if ((adsInfo[i][0] == "애드센스" || adsInfo[i][0].toUpperCase() == "ADSENSE") && adsJson.adsence == "1" && adsType == "5") {
+		strScript += '<ins class="adsbygoogle" style="display:block" data-ad-format="auto" data-full-width-responsive="true"';
+		strScript += ' data-ad-client="'+adsJson.dataAdClientId+'"';
+		strScript += ' data-ad-slot="'+adsInfo[i][1]+'"';
+		strScript += '></ins>';
       } else if((adsInfo[i][0] == "애드센스" || adsInfo[i][0].toUpperCase() == "ADSENSE") && adsJson.adsence == "1" ){
         strScript += '<ins class="adsbygoogle '+cssClass+'" ';
         if(iWidth == null){

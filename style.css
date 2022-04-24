@@ -1452,7 +1452,7 @@ html {
 /* area-main */
 .area-main {
     width: 100%;
-    max-width: 640px;
+    max-width: 700px;
 }
 
 /* ----- media query - mobile ----- */
@@ -2469,7 +2469,7 @@ html {
 
 .article-type- .summary,
 .article-type-thumbnail .summary {
-    max-width: 620px;
+    max-width: 680px;
     max-height: 40px;
     margin-bottom: 5px;
     font-size: 13px;

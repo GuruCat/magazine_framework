@@ -2,9 +2,10 @@
 <html lang="ko">
 
 <head>
-  <title>[##_page_title_##]</title>
+  <title>[##_page_title_##] :: [##_title_##]</title>
   <meta name="title" content="[##_page_title_##] :: [##_title_##]" />
   <meta name="description" Content="[##_desc_##]" />
+  <meta name="author" content="[##_blogger_##]">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -14,11 +15,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&amp;subset=korean">
   <link rel="stylesheet" href="./style.css" />
   <s_if_var_adsense-use-yn>
-  	<script data-ad-client="[##_var_adsense-data-ad-client_##]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=[##_var_adsense-data-ad-client_##]"
-		crossorigin="anonymous"></script>
+  	<script data-ad-client="[##_var_adsense-data-ad-client_##]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </s_if_var_adsense-use-yn>
   <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
-  <script src="./images/jamesOdyssey.js?v20220330.0235" charset="utf-8"></script>
+  <script src="./images/jamesOdyssey.js?v20220330.2139" charset="utf-8"></script>
   <script type="text/javascript">
     var adsJson = {
       adsence : '[##_var_adsense-use-yn_##]',
@@ -216,12 +216,12 @@
 
                 </s_list_empty>
                 <!-- 카테고리 하단 광고 스크립트 시작 -->
-				<script>
-					<s_if_var_ads-category-bottom-use-yn>
-						if('1' == adsJson.adsence || '1' == adsJson.adfit) adsCategoryBottom = true;
-					</s_if_var_ads-category-bottom-use-yn>
-				</script>
-				<!-- 카테고리 하단 광고 스크립트 종료 --> 
+		<script>
+			<s_if_var_ads-category-bottom-use-yn>
+				if('1' == adsJson.adsence || '1' == adsJson.adfit) adsCategoryBottom = true;
+			</s_if_var_ads-category-bottom-use-yn>
+		</script>
+		<!-- 카테고리 하단 광고 스크립트 종료 --> 
               </s_list>
             </div>
             <!-- // s_list / 카테고리, 검색 리스트 -->
@@ -353,7 +353,7 @@
         							  <script>
         							    if('1' == adsJson.adsence || '1' == adsJson.adfit)
         							    {
-          							    <s_if_var_ads-content-bottom-info>document.write(getAds(adsJson,"[##_var_ads-content-bottom-info_##]",""));</s_if_var_ads-content-bottom-info>
+          							    <s_if_var_ads-content-bottom-info>document.write(getAds(adsJson,"[##_var_ads-content-bottom-info_##]","","5"));</s_if_var_ads-content-bottom-info>
           							    <s_if_var_ads-content-bottom-pc-info>document.write(getAds(adsJson,"[##_var_ads-content-bottom-pc-info_##]","pc"));</s_if_var_ads-content-bottom-pc-info>
           							    <s_if_var_ads-content-bottom-mobile-info>document.write(getAds(adsJson,"[##_var_ads-content-bottom-mobile-info_##]","mobile"));</s_if_var_ads-content-bottom-mobile-info>
         							    }
@@ -846,32 +846,32 @@
               <div class="area-common">
                 <s_cover_rep>
                   <s_cover name='cover-ads'>
-      			  	<div class='area-cover cover-ads'>
+      			<div class="area-cover cover-ads">
       				<!-- 광고 커버 -->
-      					<article class="article-type-common article-type-thumbnail checked-item">
-                        	<script>
-  								if('1' == adsJson.adsence || '1' == adsJson.adfit)
-  								{
-    								document.write(getAds(adsJson,"[##_cover_title_##]","","4"));
-    							}
-						    </script>
-						</article>
-      				</div>
+      				<article class="article-type-common article-type-thumbnail checked-item">
+                                        <script>
+			                if('1' == adsJson.adsence || '1' == adsJson.adfit)
+				        {
+					        document.write(getAds(adsJson,"[##_cover_title_##]","","4"));
+				        }
+                                        </script>
+				</article>
+      			</div>
                   </s_cover>
         						
-				  <s_cover name='cover-matching-ads'>
-					<div class='cover-ads'>
-					<!-- 일치하는 컨텐츠 광고 커버 -->
-					    <ul>
-		                  <script>
-  							    if('1' == adsJson.adsence || '1' == adsJson.adfit)
-  							    {
-    							    document.write(getAds(adsJson,"[##_cover_title_##]","","1"));
-    							}
-							</script>
-                		</ul>
-					</div>
-				  </s_cover>
+		  <s_cover name='cover-matching-ads'>
+			<div class="area-cover cover-ads">
+			<!-- 일치하는 컨텐츠 광고 커버 -->
+			    <article class="article-type-common article-type-thumbnail checked-item">
+                                    <script>
+			                 if('1' == adsJson.adsence || '1' == adsJson.adfit)
+  			                 {
+        			            document.write(getAds(adsJson,"[##_cover_title_##]","","1"));
+	  				 }
+                                    </script>
+                              </article>
+			</div>
+		  </s_cover>
       						
                   <!-- type-crop -->
                   <s_cover name='crop'>
@@ -952,30 +952,30 @@
                           <a href="[##_cover_url_##]" class="link-title">more</a>
                         </s_cover_url>
                       </div>
-											<div class="box-article">
-													<s_cover_item>
-														<article class="article-type-common article-type-thumbnail">
-															<a href="[##_cover_item_url_##]" class="link-article">
-																<p class="thumbnail" <s_cover_item_thumbnail> has-thumbnail="1" style="background-image:url('[##_cover_item_thumbnail_##]')" </s_cover_item_thumbnail>>
-															<img src="" class="img-thumbnail" role="presentation">
-															</p>
-														</a>
-													<div class="article-content">
-														<a href="[##_cover_item_url_##]" class="link-article">
-															<strong class="title">[##_cover_item_title_##]</strong>
-															<p class="summary">[##_cover_item_summary_##]</p>
-														</a>
-														<div class="box-meta">
-															<s_cover_item_article_info>
-																<a href="[##_cover_item_url_##]" class="link-category">[##_cover_item_category_##]</a>
-																<span class="date">[##_cover_item_simple_date_##]</span>
-																<span class="reply">[##_cover_item_comment_count_##]</span>
-															</s_cover_item_article_info>
-														</div>
-													</div>
-													</article>
-												</s_cover_item>
-											</div>
+	                <div class="box-article">
+			                <s_cover_item>
+				                <article class="article-type-common article-type-thumbnail">
+					                <a href="[##_cover_item_url_##]" class="link-article">
+						                <p class="thumbnail" <s_cover_item_thumbnail> has-thumbnail="1" style="background-image:url('[##_cover_item_thumbnail_##]')" </s_cover_item_thumbnail>>
+					                <img src="" class="img-thumbnail" role="presentation">
+					                </p>
+				                </a>
+			                <div class="article-content">
+				                <a href="[##_cover_item_url_##]" class="link-article">
+					                <strong class="title">[##_cover_item_title_##]</strong>
+					                <p class="summary">[##_cover_item_summary_##]</p>
+				                </a>
+				                <div class="box-meta">
+					                <s_cover_item_article_info>
+						                <a href="[##_cover_item_url_##]" class="link-category">[##_cover_item_category_##]</a>
+						                <span class="date">[##_cover_item_simple_date_##]</span>
+						                <span class="reply">[##_cover_item_comment_count_##]</span>
+					                </s_cover_item_article_info>
+				                </div>
+			                </div>
+			                </article>
+		                </s_cover_item>
+	                </div>
                     </div>
                   </s_cover>
                   <!-- // type-thumbnail -->
@@ -1210,10 +1210,10 @@
 								<s_if_var_ads-sidebar-use-yn>
 								<div class="sidebarAds sidebarAds10">
 								  <div class="float-sidebar" style="top:0px;">
-  								  <script>
-  								    document.write(getAds(adsJson,"[##_var_ads-sidebar-info10_##]",""));
-  								  </script>
-  								</div>
+  								    <script>
+  								      document.write(getAds(adsJson,"[##_var_ads-sidebar-info10_##]",""));
+  								   </script>
+  								  </div>
 								</div>
 								</s_if_var_ads-sidebar-use-yn>
 							</s_sidebar_element>
@@ -1432,7 +1432,7 @@
 				if(!isMobile){
 					document.write('<div id="ads-flutter-footer-blank" style="clear:both;"> </div>');
 					document.write('<div id="ads-flutter-footer" class="ads-flutter-footer">');
-				  document.write(getAds(adsJson,"[##_var_ads-flutter-footer-info_##]","","3"));
+					document.write(getAds(adsJson,"[##_var_ads-flutter-footer-info_##]","","3"));
 					document.write('<span id="ads-flutter-footer-close" class="ads-flutter-footer-close">x</span></div>');
 					var ht = $(".ads-flutter-footer").outerHeight(true);
 					$('#ads-flutter-footer-blank').css("height",(ht-20)+"px");
@@ -1455,8 +1455,8 @@
         var $analyticsObj = $('.adsbygoogle');
         $analyticsObj.each(function(){
           try{ 
-  					(adsbygoogle = window.adsbygoogle || []).push({});
-  				} catch (e) {};
+  			(adsbygoogle = window.adsbygoogle || []).push({});
+  		  } catch (e) {};
         });
       });
     </s_if_var_adsense-use-yn>
