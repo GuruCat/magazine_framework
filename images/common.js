@@ -446,6 +446,24 @@ function commonClickHandler(){
     });
 }
 
+function printTime() {
+    var now = new Date();
+    var nowTime = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate() + " "
+         + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "." + now.getMilliseconds();
+    return nowTime;
+}
+
+function redefineLightboxOptions() {
+    lightbox.option({
+        "fadeDuration": 200,
+        "resizeDuration": 200,
+        "wrapAround": false,
+        "albumLabel": "[%1 of %2]",
+        "fitImagesInViewport":true,
+        "stopEvent": false
+    })
+}
+
 
 (function($) {
    $(document).ready(function(){
@@ -457,5 +475,8 @@ function commonClickHandler(){
 			 displayControl();
 			 sliderControl();
 			 commonClickHandler();
+
+             if (console!=null) console.log(printTime());
+             redefineLightboxOptions();
 	 })
 })(tjQuery);

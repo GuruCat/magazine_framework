@@ -783,6 +783,21 @@
 			<description><![CDATA[타이틀에 [애드센스,광고ID,width,height] 형식으로 값을 입력하세요(width,height 반응형 생략)]]></description>
 		</item>
 		<item>
+			<name>cover-slider</name>
+			<label><![CDATA[ 슬라이더 ]]></label>
+			<description><![CDATA[ 좌우 스와이프가 가능한 슬라이더입니다. ]]></description>
+		</item>
+		<item>
+			<name>cover-masonry</name>
+			<label><![CDATA[벽돌 리스트]]></label>
+			<description><![CDATA[ 섬네일 크기에 따라 자동으로 배치되는 벽돌 리스트입니다. ]]></description>
+		</item>
+		<item>
+			<name>cover-gallery</name>
+			<label><![CDATA[ 갤러리 ]]></label>
+			<description><![CDATA[ 섬네일만 나열하여 보여줍니다. 마우스오버시 타이틀이 노출됩니다. ]]></description>
+		</item>
+		<item>
 			<name>thumbnail</name>
 			<label>
 				<![CDATA[ 베이직 타입 ]]>

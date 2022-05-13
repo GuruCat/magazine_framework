@@ -1,3 +1,69 @@
+function coverSlider(){
+	var $slider = $(".cover-slider");
+
+	$slider.each(function(){
+		var $this = $(this),
+			$sliderItem = $(this).find("li"),
+			itemLength = $sliderItem.length,
+			num = 0;
+
+		if ( itemLength > 1 ){
+			$this.prepend('<button type="button" class="prev">이전</button><button type="button" class="next">다음</button>');
+			$slider.find("ul").height( $sliderItem.eq(num).height() );
+			$sliderItem.css({
+				"position": "absolute",
+				"top": 0,
+			});
+			$sliderItem.eq(num).siblings().css("left","100%");
+
+			$this.on("click", ".prev", function(){
+				if ( !$sliderItem.eq(num).is(":animated") ){
+					$sliderItem.eq(num).animate({ left: "100%" }, 500 ).siblings().css("left","-100%");
+					num = num-1 < 0 ? $sliderItem.length-1 : num-1;
+					slideMove();
+				}
+			});
+
+			$this.on("click", ".next", function(){
+				if ( !$sliderItem.eq(num).is(":animated") ){
+					$sliderItem.eq(num).animate({ left: "-100%" }, 500 ).siblings().css("left","100%");
+					num = num+1 >= $sliderItem.length ? 0 : num+1;
+					slideMove();
+				}
+			});
+
+			function slideMove(){
+				$sliderItem.eq(num).animate({ left: "0" }, 500 );
+				$(".cover-slider .paging button").eq(num).addClass("current").siblings().removeClass("current");
+			}
+
+			$this.on("touchstart", function(){
+				var touch = event.touches[0];
+				touchstartX = touch.clientX,
+				touchstartY = touch.clientY;
+			});
+
+			$this.on("touchend", function(){
+				if( event.touches.length == 0 ){
+					var touch = event.changedTouches[event.changedTouches.length - 1];
+					touchendX = touch.clientX,
+					touchendY = touch.clientY,
+					touchoffsetX = touchendX - touchstartX,
+					touchoffsetY = touchendY - touchstartY;
+
+					if ( Math.abs(touchoffsetX) > 10 && Math.abs(touchoffsetY) <= 100 ){
+						if (touchoffsetX < 0 ){
+							$this.find(".next").click();
+						} else {
+							$this.find(".prev").click();
+						}
+					}
+				}
+			});
+		}
+	});
+}
+
 (function($){	
 	getAds = function(adsJson,adsInfo,printType,adsType){
 	  /*
@@ -92,6 +158,12 @@
 		strScript += ' data-ad-slot="'+adsInfo[i][1]+'"';
 		strScript += '></ins>';
       } else if((adsInfo[i][0] == "애드센스" || adsInfo[i][0].toUpperCase() == "ADSENSE") && adsJson.adsence == "1" ){
+		if(printType =="sidebar" && window.getWindowCleintWidth()<768) {
+			// narrow display
+			if (console!=null) console.timeLog("printType:" + printType + ", window Width:" + window.getWindowCleintWidth());
+			return '';
+		}
+
         strScript += '<ins class="adsbygoogle '+cssClass+'" ';
         if(iWidth == null){
           strScript += ' style="display:block"';
@@ -164,5 +236,11 @@
 
     return subCategoryHtml.replace(/	/g, '');
 	}
-	
+
+	// cover page slider
+    if ( $(".cover-slider").length ) coverSlider();
+
+	// lightbox option re-assign
+	lightbox.options.albumLabel = "%1 of %2"
+	if (console!=null) console.log("lightbox options !");
 })(jQuery);
